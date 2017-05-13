@@ -18,7 +18,7 @@
             Dim cliente As DataRowView = ClientesBindingSource.AddNew()
             'AGREGA AUTO
             nuevoAuto = AutosBindingSource.AddNew()
-            nuevoAuto("clientes_idCliente") = cliente("idCliente")
+            nuevoAuto("clientes_idCliente") = FrmAgregarNuevoAuto.cmbCliente.SelectedValue
             nuevoAuto("marca") = FrmAgregarNuevoAuto.txtMarca.Text
             nuevoAuto("modelo") = FrmAgregarNuevoAuto.txtModelo.Text
             nuevoAuto("anio") = FrmAgregarNuevoAuto.txtAnio.Text
