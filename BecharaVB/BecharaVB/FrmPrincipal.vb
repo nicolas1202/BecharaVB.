@@ -3,7 +3,7 @@
         If (DialogResult.OK = FrmAgregarCliente.ShowDialog()) Then
             Dim nuevocliente As DataRowView
 
-            'AGREGA MEDICO
+            'AGREGA CLIENTE
             nuevocliente = ClientesBindingSource.AddNew()
             nuevocliente("nombre") = FrmAgregarCliente.hola.Text
             nuevocliente("apellido") = FrmAgregarCliente.txtApellidoCliente.Text
@@ -103,6 +103,32 @@
     Private Sub turnosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles turnosToolStripMenuItem.Click
         Dim frmTurno As New FrmTurnos()
         frmTurno.Show()
+    End Sub
+
+    Private Sub textBox1_TextChanged(sender As Object, e As EventArgs) Handles txtBuscaCliente.TextChanged
+        Try
+            Dim filtro As String
+            filtro = cmbFiltroCliente.SelectedItem.ToString
+
+
+            If filtro = "Nombre" Then
+                ClientesBindingSource.Filter = "nombre like '*" & txtBuscaCliente.Text & "*'"
+
+            ElseIf filtro = "Apellido" Then
+                ClientesBindingSource.Filter = "apellido like '*" & txtBuscaCliente.Text & "*'"
+
+
+
+            Else
+                ClientesBindingSource.Filter = "Direccion like '*" & txtBuscaCliente.Text & "*'"
+
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show("Seleccione un filtro de búsqueda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            txtBuscaCliente.Clear()
+        End Try
+
     End Sub
 End Class
 

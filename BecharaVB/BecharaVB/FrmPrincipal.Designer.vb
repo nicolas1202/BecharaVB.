@@ -32,10 +32,10 @@ Partial Class principal
         Me.turnosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.presupuestosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.reportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.comboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cmbFiltroCliente = New System.Windows.Forms.ComboBox()
         Me.label2 = New System.Windows.Forms.Label()
         Me.label1 = New System.Windows.Forms.Label()
-        Me.textBox1 = New System.Windows.Forms.TextBox()
+        Me.txtBuscaCliente = New System.Windows.Forms.TextBox()
         Me.button3 = New System.Windows.Forms.Button()
         Me.button2 = New System.Windows.Forms.Button()
         Me.button1 = New System.Windows.Forms.Button()
@@ -116,15 +116,15 @@ Partial Class principal
         Me.reportesToolStripMenuItem.Size = New System.Drawing.Size(65, 20)
         Me.reportesToolStripMenuItem.Text = "Reportes"
         '
-        'comboBox1
+        'cmbFiltroCliente
         '
-        Me.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.comboBox1.FormattingEnabled = True
-        Me.comboBox1.Items.AddRange(New Object() {"Nombre", "Apellido", "DNI", "Direccion"})
-        Me.comboBox1.Location = New System.Drawing.Point(445, 50)
-        Me.comboBox1.Name = "comboBox1"
-        Me.comboBox1.Size = New System.Drawing.Size(161, 21)
-        Me.comboBox1.TabIndex = 7
+        Me.cmbFiltroCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbFiltroCliente.FormattingEnabled = True
+        Me.cmbFiltroCliente.Items.AddRange(New Object() {"Nombre", "Apellido", "Direccion"})
+        Me.cmbFiltroCliente.Location = New System.Drawing.Point(445, 50)
+        Me.cmbFiltroCliente.Name = "cmbFiltroCliente"
+        Me.cmbFiltroCliente.Size = New System.Drawing.Size(161, 21)
+        Me.cmbFiltroCliente.TabIndex = 7
         '
         'label2
         '
@@ -144,12 +144,12 @@ Partial Class principal
         Me.label1.TabIndex = 13
         Me.label1.Text = "Buscar"
         '
-        'textBox1
+        'txtBuscaCliente
         '
-        Me.textBox1.Location = New System.Drawing.Point(195, 50)
-        Me.textBox1.Name = "textBox1"
-        Me.textBox1.Size = New System.Drawing.Size(156, 20)
-        Me.textBox1.TabIndex = 12
+        Me.txtBuscaCliente.Location = New System.Drawing.Point(195, 50)
+        Me.txtBuscaCliente.Name = "txtBuscaCliente"
+        Me.txtBuscaCliente.Size = New System.Drawing.Size(156, 20)
+        Me.txtBuscaCliente.TabIndex = 12
         '
         'button3
         '
@@ -279,10 +279,10 @@ Partial Class principal
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(761, 447)
-        Me.Controls.Add(Me.comboBox1)
+        Me.Controls.Add(Me.cmbFiltroCliente)
         Me.Controls.Add(Me.label2)
         Me.Controls.Add(Me.label1)
-        Me.Controls.Add(Me.textBox1)
+        Me.Controls.Add(Me.txtBuscaCliente)
         Me.Controls.Add(Me.button3)
         Me.Controls.Add(Me.button2)
         Me.Controls.Add(Me.button1)
@@ -311,10 +311,10 @@ Partial Class principal
     Private WithEvents turnosToolStripMenuItem As ToolStripMenuItem
     Private WithEvents presupuestosToolStripMenuItem As ToolStripMenuItem
     Private WithEvents reportesToolStripMenuItem As ToolStripMenuItem
-    Private WithEvents comboBox1 As ComboBox
+    Private WithEvents cmbFiltroCliente As ComboBox
     Private WithEvents label2 As Label
     Private WithEvents label1 As Label
-    Private WithEvents textBox1 As TextBox
+    Private WithEvents txtBuscaCliente As TextBox
     Private WithEvents button3 As Button
     Private WithEvents button2 As Button
     Private WithEvents button1 As Button
