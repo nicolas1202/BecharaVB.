@@ -31,7 +31,7 @@ Partial Class FrmAgregarCliente
         Me.txtTelefonoCliente = New System.Windows.Forms.TextBox()
         Me.txtDireccionCliente = New System.Windows.Forms.TextBox()
         Me.txtDniCliente = New System.Windows.Forms.TextBox()
-        Me.hola = New System.Windows.Forms.TextBox()
+        Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.label2 = New System.Windows.Forms.Label()
         Me.label5 = New System.Windows.Forms.Label()
         Me.label1 = New System.Windows.Forms.Label()
@@ -70,7 +70,7 @@ Partial Class FrmAgregarCliente
         Me.groupBox1.Controls.Add(Me.txtTelefonoCliente)
         Me.groupBox1.Controls.Add(Me.txtDireccionCliente)
         Me.groupBox1.Controls.Add(Me.txtDniCliente)
-        Me.groupBox1.Controls.Add(Me.hola)
+        Me.groupBox1.Controls.Add(Me.txtNombre)
         Me.groupBox1.Controls.Add(Me.label2)
         Me.groupBox1.Controls.Add(Me.label5)
         Me.groupBox1.Controls.Add(Me.label1)
@@ -128,12 +128,12 @@ Partial Class FrmAgregarCliente
         Me.txtDniCliente.Size = New System.Drawing.Size(118, 20)
         Me.txtDniCliente.TabIndex = 6
         '
-        'hola
+        'txtNombre
         '
-        Me.hola.Location = New System.Drawing.Point(135, 24)
-        Me.hola.Name = "hola"
-        Me.hola.Size = New System.Drawing.Size(118, 20)
-        Me.hola.TabIndex = 5
+        Me.txtNombre.Location = New System.Drawing.Point(135, 24)
+        Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.Size = New System.Drawing.Size(118, 20)
+        Me.txtNombre.TabIndex = 5
         '
         'label2
         '
@@ -207,7 +207,7 @@ Partial Class FrmAgregarCliente
     Private WithEvents label1 As Label
     Private WithEvents label4 As Label
     Private WithEvents label3 As Label
-    Public WithEvents hola As TextBox
+    Public WithEvents txtNombre As TextBox
     Public WithEvents dtpCliente As DateTimePicker
     Public WithEvents txtApellidoCliente As TextBox
     Public WithEvents txtTelefonoCliente As TextBox

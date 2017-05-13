@@ -30,11 +30,12 @@
             nuevoAuto("aceiteMotor") = FrmAgregarNuevoAuto.txtAceiteMotor.Text
             nuevoAuto("kilometraje") = FrmAgregarNuevoAuto.txtKilometraje.Text
             nuevoAuto("distribucion") = FrmAgregarNuevoAuto.txtCorrea.Text
-            nuevoAuto("tipoCombustible") = FrmAgregarNuevoAuto.txtTipoCombustible.Text
+            nuevoAuto("tipoCombustible") = FrmAgregarNuevoAuto.cmbTipoCombustible.SelectedItem
 
             nuevoAuto.EndEdit()
             AutosTableAdapter.Update(BecharaDataSet)
             AutosTableAdapter.Fill(BecharaDataSet.autos)
+            FrmAgregarNuevoAuto.Dispose()
         End If
     End Sub
 

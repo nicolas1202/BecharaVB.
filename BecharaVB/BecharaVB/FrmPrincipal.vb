@@ -5,7 +5,7 @@
 
             'AGREGA CLIENTE
             nuevocliente = ClientesBindingSource.AddNew()
-            nuevocliente("nombre") = FrmAgregarCliente.hola.Text
+            nuevocliente("nombre") = FrmAgregarCliente.txtNombre.Text
             nuevocliente("apellido") = FrmAgregarCliente.txtApellidoCliente.Text
             nuevocliente("direccion") = FrmAgregarCliente.txtDireccionCliente.Text
             nuevocliente("telefono") = FrmAgregarCliente.txtTelefonoCliente.Text
@@ -15,6 +15,7 @@
             nuevocliente.EndEdit()
             ClientesTableAdapter.Update(BecharaDataSet)
             ClientesTableAdapter.Fill(BecharaDataSet.clientes)
+            FrmAgregarCliente.Dispose()
         End If
     End Sub
 
@@ -32,7 +33,8 @@
             Dim result As Integer = MessageBox.Show("¿Esta seguro de eliminar al cliente " + clienteActual("nombre") + " " + clienteActual("apellido") + " ?", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Error)
 
             If result = DialogResult.Yes Then
-                ClientesTableAdapter.Delete(clienteActual("idCliente"), clienteActual("nombre"), clienteActual("apellido"), clienteActual("direccion"), clienteActual("telefono"), clienteActual("fechaNacimiento"), clienteActual("dni"))
+                clienteActual.Delete()
+                ClientesTableAdapter.Update(BecharaDataSet.clientes)
                 ClientesTableAdapter.Fill(BecharaDataSet.clientes)
             ElseIf result = DialogResult.No Then
 
