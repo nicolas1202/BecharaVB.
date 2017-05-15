@@ -28,7 +28,6 @@ Partial Class FrmAgregarNuevoAuto
         Me.groupBox1 = New System.Windows.Forms.GroupBox()
         Me.txtCorrea = New System.Windows.Forms.TextBox()
         Me.label13 = New System.Windows.Forms.Label()
-        Me.txtTipoCombustible = New System.Windows.Forms.TextBox()
         Me.label14 = New System.Windows.Forms.Label()
         Me.txtKilometraje = New System.Windows.Forms.TextBox()
         Me.label11 = New System.Windows.Forms.Label()
@@ -59,6 +58,7 @@ Partial Class FrmAgregarNuevoAuto
         Me.ClientesTableAdapter = New BecharaVB.becharaDataSetTableAdapters.clientesTableAdapter()
         Me.AutosTableAdapter = New BecharaVB.becharaDataSetTableAdapters.autosTableAdapter()
         Me.AutosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.cmbTipoCombustible = New System.Windows.Forms.ComboBox()
         Me.groupBox1.SuspendLayout()
         CType(Me.ClientesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BecharaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -87,9 +87,9 @@ Partial Class FrmAgregarNuevoAuto
         '
         'groupBox1
         '
+        Me.groupBox1.Controls.Add(Me.cmbTipoCombustible)
         Me.groupBox1.Controls.Add(Me.txtCorrea)
         Me.groupBox1.Controls.Add(Me.label13)
-        Me.groupBox1.Controls.Add(Me.txtTipoCombustible)
         Me.groupBox1.Controls.Add(Me.label14)
         Me.groupBox1.Controls.Add(Me.txtKilometraje)
         Me.groupBox1.Controls.Add(Me.label11)
@@ -137,13 +137,6 @@ Partial Class FrmAgregarNuevoAuto
         Me.label13.Size = New System.Drawing.Size(96, 13)
         Me.label13.TabIndex = 26
         Me.label13.Text = "Correa Distribución"
-        '
-        'txtTipoCombustible
-        '
-        Me.txtTipoCombustible.Location = New System.Drawing.Point(422, 259)
-        Me.txtTipoCombustible.Name = "txtTipoCombustible"
-        Me.txtTipoCombustible.Size = New System.Drawing.Size(118, 20)
-        Me.txtTipoCombustible.TabIndex = 27
         '
         'label14
         '
@@ -374,6 +367,17 @@ Partial Class FrmAgregarNuevoAuto
         Me.AutosBindingSource.DataMember = "autos"
         Me.AutosBindingSource.DataSource = Me.BecharaDataSet
         '
+        'cmbTipoCombustible
+        '
+        Me.cmbTipoCombustible.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.cmbTipoCombustible.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbTipoCombustible.FormattingEnabled = True
+        Me.cmbTipoCombustible.Items.AddRange(New Object() {"Nafta", "Diesel", "GNC"})
+        Me.cmbTipoCombustible.Location = New System.Drawing.Point(422, 259)
+        Me.cmbTipoCombustible.Name = "cmbTipoCombustible"
+        Me.cmbTipoCombustible.Size = New System.Drawing.Size(121, 21)
+        Me.cmbTipoCombustible.TabIndex = 29
+        '
         'FrmAgregarNuevoAuto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -418,7 +422,6 @@ Partial Class FrmAgregarNuevoAuto
     Public WithEvents txtModelo As TextBox
     Public WithEvents txtCorrea As TextBox
     Public WithEvents txtColor As TextBox
-    Public WithEvents txtTipoCombustible As TextBox
     Public WithEvents txtKilometraje As TextBox
     Public WithEvents txtAceiteMotor As TextBox
     Public WithEvents txtFiltroHabitaculo As TextBox
@@ -430,4 +433,5 @@ Partial Class FrmAgregarNuevoAuto
     Friend WithEvents ClientesTableAdapter As becharaDataSetTableAdapters.clientesTableAdapter
     Friend WithEvents AutosTableAdapter As becharaDataSetTableAdapters.autosTableAdapter
     Friend WithEvents AutosBindingSource As BindingSource
+    Friend WithEvents cmbTipoCombustible As ComboBox
 End Class

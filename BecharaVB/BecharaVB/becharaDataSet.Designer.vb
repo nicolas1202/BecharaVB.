@@ -41,11 +41,11 @@ Partial Public Class becharaDataSet
     
     Private tableturnos As turnosDataTable
     
-    Private relationfk_autos_clientes1 As Global.System.Data.DataRelation
-    
     Private relationfk_presupuesto_has_tipotrabajo_presupuesto1 As Global.System.Data.DataRelation
     
     Private relationfk_presupuesto_has_tipotrabajo_tipotrabajo1 As Global.System.Data.DataRelation
+    
+    Private relationfk_autos_clientes1 As Global.System.Data.DataRelation
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -368,9 +368,9 @@ Partial Public Class becharaDataSet
                 Me.tableturnos.InitVars
             End If
         End If
-        Me.relationfk_autos_clientes1 = Me.Relations("fk_autos_clientes1")
         Me.relationfk_presupuesto_has_tipotrabajo_presupuesto1 = Me.Relations("fk_presupuesto_has_tipotrabajo_presupuesto1")
         Me.relationfk_presupuesto_has_tipotrabajo_tipotrabajo1 = Me.Relations("fk_presupuesto_has_tipotrabajo_tipotrabajo1")
+        Me.relationfk_autos_clientes1 = Me.Relations("fk_autos_clientes1")
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -397,12 +397,12 @@ Partial Public Class becharaDataSet
         MyBase.Tables.Add(Me.tabletipotrabajo)
         Me.tableturnos = New turnosDataTable()
         MyBase.Tables.Add(Me.tableturnos)
-        Me.relationfk_autos_clientes1 = New Global.System.Data.DataRelation("fk_autos_clientes1", New Global.System.Data.DataColumn() {Me.tableclientes.idClienteColumn}, New Global.System.Data.DataColumn() {Me.tableautos.clientes_idClienteColumn}, false)
-        Me.Relations.Add(Me.relationfk_autos_clientes1)
         Me.relationfk_presupuesto_has_tipotrabajo_presupuesto1 = New Global.System.Data.DataRelation("fk_presupuesto_has_tipotrabajo_presupuesto1", New Global.System.Data.DataColumn() {Me.tablepresupuesto.idPresupuestoColumn}, New Global.System.Data.DataColumn() {Me.tablepresupuesto_has_tipotrabajo.presupuesto_idPresupuestoColumn}, false)
         Me.Relations.Add(Me.relationfk_presupuesto_has_tipotrabajo_presupuesto1)
         Me.relationfk_presupuesto_has_tipotrabajo_tipotrabajo1 = New Global.System.Data.DataRelation("fk_presupuesto_has_tipotrabajo_tipotrabajo1", New Global.System.Data.DataColumn() {Me.tabletipotrabajo.idTipoTrabajoColumn}, New Global.System.Data.DataColumn() {Me.tablepresupuesto_has_tipotrabajo.tipotrabajo_idTipoTrabajoColumn}, false)
         Me.Relations.Add(Me.relationfk_presupuesto_has_tipotrabajo_tipotrabajo1)
+        Me.relationfk_autos_clientes1 = New Global.System.Data.DataRelation("fk_autos_clientes1", New Global.System.Data.DataColumn() {Me.tableclientes.idClienteColumn}, New Global.System.Data.DataColumn() {Me.tableautos.clientes_idClienteColumn}, false)
+        Me.Relations.Add(Me.relationfk_autos_clientes1)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
