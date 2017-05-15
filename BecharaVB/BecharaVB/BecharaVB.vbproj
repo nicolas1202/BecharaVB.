@@ -82,6 +82,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>becharaDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="becharaDataSet.vb">
+      <DependentUpon>becharaDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FrmAgregarNuevoAuto.Designer.vb">
       <DependentUpon>FrmAgregarNuevoAuto.vb</DependentUpon>
     </Compile>

@@ -34,6 +34,7 @@
 
             If result = DialogResult.Yes Then
                 clienteActual.Delete()
+                ' ClientesTableAdapter.Delete(clienteActual("idCliente"), clienteActual("nombre"), clienteActual("apellido"), clienteActual("direccion"), clienteActual("telefono"), clienteActual("fechaNacimiento"), clienteActual("dni"))
                 ClientesTableAdapter.Update(BecharaDataSet.clientes)
                 ClientesTableAdapter.Fill(BecharaDataSet.clientes)
             ElseIf result = DialogResult.No Then
