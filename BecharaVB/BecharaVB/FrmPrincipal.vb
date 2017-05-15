@@ -31,7 +31,7 @@
 
         Try
             Dim clienteActual As DataRowView = ClientesBindingSource.Current
-            Dim result As Integer = MessageBox.Show("¿Esta seguro de eliminar al cliente " + clienteActual("nombre") + " " + clienteActual("apellido") + " ?", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Error)
+            Dim result As Integer = MessageBox.Show("¿Esta seguro de eliminar al cliente " + clienteActual("nombre") + " " + clienteActual("apellido") + " ?. Se eliminaràn todos sus autos", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Error)
 
             If result = DialogResult.Yes Then
                 clienteActual.Delete()
