@@ -21,6 +21,7 @@
     Private Sub principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'BecharaDataSet.clientes' table. You can move, or remove it, as needed.
         Me.ClientesTableAdapter.Fill(Me.BecharaDataSet.clientes)
+        Me.AutosTableAdapter.Fill(Me.BecharaDataSet.autos)
 
     End Sub
 
@@ -34,6 +35,7 @@
             If result = DialogResult.Yes Then
                 ClientesTableAdapter.Delete(clienteActual("idCliente"), clienteActual("nombre"), clienteActual("apellido"), clienteActual("direccion"), clienteActual("telefono"), clienteActual("fechaNacimiento"), clienteActual("dni"))
                 ClientesTableAdapter.Fill(BecharaDataSet.clientes)
+                AutosTableAdapter.Fill(BecharaDataSet.autos)
             ElseIf result = DialogResult.No Then
 
             End If

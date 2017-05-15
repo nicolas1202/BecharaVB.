@@ -31,13 +31,7 @@ Partial Class FrmAuto
         Me.label1 = New System.Windows.Forms.Label()
         Me.textBox1 = New System.Windows.Forms.TextBox()
         Me.groupBox1 = New System.Windows.Forms.GroupBox()
-        Me.BecharaDataSet = New BecharaVB.becharaDataSet()
-        Me.AutosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.AutosTableAdapter = New BecharaVB.becharaDataSetTableAdapters.autosTableAdapter()
-        Me.TableAdapterManager = New BecharaVB.becharaDataSetTableAdapters.TableAdapterManager()
         Me.AutosDataGridView = New System.Windows.Forms.DataGridView()
-        Me.ClientesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ClientesTableAdapter = New BecharaVB.becharaDataSetTableAdapters.clientesTableAdapter()
         Me.clientes_idCliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -51,10 +45,16 @@ Partial Class FrmAuto
         Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AutosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BecharaDataSet = New BecharaVB.becharaDataSet()
+        Me.AutosTableAdapter = New BecharaVB.becharaDataSetTableAdapters.autosTableAdapter()
+        Me.TableAdapterManager = New BecharaVB.becharaDataSetTableAdapters.TableAdapterManager()
+        Me.ClientesTableAdapter = New BecharaVB.becharaDataSetTableAdapters.clientesTableAdapter()
+        Me.ClientesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.groupBox1.SuspendLayout()
-        CType(Me.BecharaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.AutosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AutosDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AutosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BecharaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ClientesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -133,33 +133,6 @@ Partial Class FrmAuto
         Me.groupBox1.TabStop = False
         Me.groupBox1.Text = "Vehiculos"
         '
-        'BecharaDataSet
-        '
-        Me.BecharaDataSet.DataSetName = "becharaDataSet"
-        Me.BecharaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'AutosBindingSource
-        '
-        Me.AutosBindingSource.DataMember = "autos"
-        Me.AutosBindingSource.DataSource = Me.BecharaDataSet
-        '
-        'AutosTableAdapter
-        '
-        Me.AutosTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.autosTableAdapter = Me.AutosTableAdapter
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.clientesTableAdapter = Me.ClientesTableAdapter
-        Me.TableAdapterManager.ordentrabajo_has_tipotrabajoTableAdapter = Nothing
-        Me.TableAdapterManager.ordentrabajoTableAdapter = Nothing
-        Me.TableAdapterManager.presupuesto_has_tipotrabajoTableAdapter = Nothing
-        Me.TableAdapterManager.presupuestoTableAdapter = Nothing
-        Me.TableAdapterManager.tipotrabajoTableAdapter = Nothing
-        Me.TableAdapterManager.turnosTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = BecharaVB.becharaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
         'AutosDataGridView
         '
         Me.AutosDataGridView.AllowUserToAddRows = False
@@ -173,15 +146,6 @@ Partial Class FrmAuto
         Me.AutosDataGridView.ReadOnly = True
         Me.AutosDataGridView.Size = New System.Drawing.Size(1005, 220)
         Me.AutosDataGridView.TabIndex = 0
-        '
-        'ClientesBindingSource
-        '
-        Me.ClientesBindingSource.DataMember = "clientes"
-        Me.ClientesBindingSource.DataSource = Me.BecharaDataSet
-        '
-        'ClientesTableAdapter
-        '
-        Me.ClientesTableAdapter.ClearBeforeFill = True
         '
         'clientes_idCliente
         '
@@ -274,6 +238,42 @@ Partial Class FrmAuto
         Me.DataGridViewTextBoxColumn14.Name = "DataGridViewTextBoxColumn14"
         Me.DataGridViewTextBoxColumn14.ReadOnly = True
         '
+        'AutosBindingSource
+        '
+        Me.AutosBindingSource.DataMember = "autos"
+        Me.AutosBindingSource.DataSource = Me.BecharaDataSet
+        '
+        'BecharaDataSet
+        '
+        Me.BecharaDataSet.DataSetName = "becharaDataSet"
+        Me.BecharaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'AutosTableAdapter
+        '
+        Me.AutosTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.autosTableAdapter = Me.AutosTableAdapter
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.clientesTableAdapter = Me.ClientesTableAdapter
+        Me.TableAdapterManager.ordentrabajo_has_tipotrabajoTableAdapter = Nothing
+        Me.TableAdapterManager.ordentrabajoTableAdapter = Nothing
+        Me.TableAdapterManager.presupuesto_has_tipotrabajoTableAdapter = Nothing
+        Me.TableAdapterManager.presupuestoTableAdapter = Nothing
+        Me.TableAdapterManager.tipotrabajoTableAdapter = Nothing
+        Me.TableAdapterManager.turnosTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = BecharaVB.becharaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'ClientesTableAdapter
+        '
+        Me.ClientesTableAdapter.ClearBeforeFill = True
+        '
+        'ClientesBindingSource
+        '
+        Me.ClientesBindingSource.DataMember = "clientes"
+        Me.ClientesBindingSource.DataSource = Me.BecharaDataSet
+        '
         'FrmAuto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -291,9 +291,9 @@ Partial Class FrmAuto
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmAuto"
         Me.groupBox1.ResumeLayout(False)
-        CType(Me.BecharaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.AutosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AutosDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AutosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BecharaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ClientesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

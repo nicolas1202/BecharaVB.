@@ -82,6 +82,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>becharaDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="becharaDataSet.vb">
+      <DependentUpon>becharaDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FrmAgregarNuevoAuto.Designer.vb">
       <DependentUpon>FrmAgregarNuevoAuto.vb</DependentUpon>
     </Compile>
@@ -98,6 +101,12 @@
       <DependentUpon>FrmAuto.vb</DependentUpon>
     </Compile>
     <Compile Include="FrmAuto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModificarAuto.Designer.vb">
+      <DependentUpon>FrmModificarAuto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModificarAuto.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmModificarCliente.Designer.vb">
@@ -168,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAuto.resx">
       <DependentUpon>FrmAuto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModificarAuto.resx">
+      <DependentUpon>FrmModificarAuto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmModificarCliente.resx">
       <DependentUpon>FrmModificarCliente.vb</DependentUpon>

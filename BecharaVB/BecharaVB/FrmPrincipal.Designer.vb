@@ -51,11 +51,14 @@ Partial Class principal
         Me.BecharaDataSet = New BecharaVB.becharaDataSet()
         Me.ClientesTableAdapter = New BecharaVB.becharaDataSetTableAdapters.clientesTableAdapter()
         Me.TableAdapterManager = New BecharaVB.becharaDataSetTableAdapters.TableAdapterManager()
+        Me.AutosTableAdapter = New BecharaVB.becharaDataSetTableAdapters.autosTableAdapter()
+        Me.AutosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.menuStrip1.SuspendLayout()
         Me.groupBox1.SuspendLayout()
         CType(Me.clientesDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ClientesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BecharaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AutosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'menuStrip1
@@ -274,6 +277,15 @@ Partial Class principal
         Me.TableAdapterManager.turnosTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = BecharaVB.becharaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
+        'AutosTableAdapter
+        '
+        Me.AutosTableAdapter.ClearBeforeFill = True
+        '
+        'AutosBindingSource
+        '
+        Me.AutosBindingSource.DataMember = "autos"
+        Me.AutosBindingSource.DataSource = Me.BecharaDataSet
+        '
         'principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -297,6 +309,7 @@ Partial Class principal
         CType(Me.clientesDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ClientesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BecharaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AutosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -330,4 +343,6 @@ Partial Class principal
     Friend WithEvents TelefonoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents FechaNacimientoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DniDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents AutosTableAdapter As becharaDataSetTableAdapters.autosTableAdapter
+    Friend WithEvents AutosBindingSource As BindingSource
 End Class

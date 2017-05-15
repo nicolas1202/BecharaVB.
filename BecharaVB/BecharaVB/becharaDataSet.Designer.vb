@@ -1028,6 +1028,8 @@ Partial Public Class becharaDataSet
         
         Private columndni As Global.System.Data.DataColumn
         
+        Private columnidAuto As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -1120,6 +1122,14 @@ Partial Public Class becharaDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property idAutoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnidAuto
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -1156,9 +1166,9 @@ Partial Public Class becharaDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddclientesRow(ByVal nombre As String, ByVal apellido As String, ByVal direccion As String, ByVal telefono As Integer, ByVal fechaNacimiento As Date, ByVal dni As Integer) As clientesRow
+        Public Overloads Function AddclientesRow(ByVal nombre As String, ByVal apellido As String, ByVal direccion As String, ByVal telefono As Integer, ByVal fechaNacimiento As Date, ByVal dni As Integer, ByVal idAuto As String) As clientesRow
             Dim rowclientesRow As clientesRow = CType(Me.NewRow,clientesRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, nombre, apellido, direccion, telefono, fechaNacimiento, dni}
+            Dim columnValuesArray() As Object = New Object() {Nothing, nombre, apellido, direccion, telefono, fechaNacimiento, dni, idAuto}
             rowclientesRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowclientesRow)
             Return rowclientesRow
@@ -1194,6 +1204,7 @@ Partial Public Class becharaDataSet
             Me.columntelefono = MyBase.Columns("telefono")
             Me.columnfechaNacimiento = MyBase.Columns("fechaNacimiento")
             Me.columndni = MyBase.Columns("dni")
+            Me.columnidAuto = MyBase.Columns("idAuto")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1213,6 +1224,8 @@ Partial Public Class becharaDataSet
             MyBase.Columns.Add(Me.columnfechaNacimiento)
             Me.columndni = New Global.System.Data.DataColumn("dni", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columndni)
+            Me.columnidAuto = New Global.System.Data.DataColumn("idAuto", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnidAuto)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnidCliente}, true))
             Me.columnidCliente.AutoIncrement = true
             Me.columnidCliente.AutoIncrementSeed = -1
@@ -3706,6 +3719,33 @@ Partial Public Class becharaDataSet
                 Me(Me.tableclientes.dniColumn) = value
             End Set
         End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property idAuto() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableclientes.idAutoColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'idAuto' in table 'clientes' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableclientes.idAutoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsidAutoNull() As Boolean
+            Return Me.IsNull(Me.tableclientes.idAutoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetidAutoNull()
+            Me(Me.tableclientes.idAutoColumn) = Global.System.Convert.DBNull
+        End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
