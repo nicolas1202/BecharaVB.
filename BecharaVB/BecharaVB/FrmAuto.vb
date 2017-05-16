@@ -44,6 +44,7 @@
 
             Dim auto As DataRowView = AutosBindingSource.Current
 
+
             FrmModificarAuto.txtMarca.Text = auto("marca")
             FrmModificarAuto.txtModelo.Text = auto("modelo")
             FrmModificarAuto.txtAnio.Text = auto("anio")
@@ -53,6 +54,7 @@
             FrmModificarAuto.txtFiltroCombustible.Text = auto("filtroCombustible")
             FrmModificarAuto.txtFiltroHabitaculo.Text = auto("filtroHabitaculo")
             FrmModificarAuto.txtAceiteMotor.Text = auto("aceiteMotor")
+            FrmModificarAuto.txtKilometraje.Text = auto("kilometraje")
             FrmModificarAuto.txtCorrea.Text = auto("distribucion")
             FrmModificarAuto.txtTipoCombustible.Text = auto("tipoCombustible")
 
@@ -71,6 +73,7 @@
                 auto("filtroCombustible") = FrmModificarAuto.txtFiltroCombustible.Text
                 auto("filtroHabitaculo") = FrmModificarAuto.txtFiltroHabitaculo.Text
                 auto("aceiteMotor") = FrmModificarAuto.txtAceiteMotor.Text
+                auto("kilometraje") = FrmModificarAuto.txtKilometraje.Text
                 auto("distribucion") = FrmModificarAuto.txtCorrea.Text
                 auto("tipoCombustible") = FrmModificarAuto.txtTipoCombustible.Text
 

@@ -20,4 +20,10 @@
     Private Sub button2_Click(sender As Object, e As EventArgs) Handles button2.Click
         Close()
     End Sub
+
+    Private Sub FrmModificarAuto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'BecharaDataSet.clientes' table. You can move, or remove it, as needed.
+        Me.ClientesTableAdapter.Fill(Me.BecharaDataSet.clientes)
+
+    End Sub
 End Class

@@ -22,6 +22,7 @@ Partial Class FrmModificarAuto
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.button2 = New System.Windows.Forms.Button()
         Me.button1 = New System.Windows.Forms.Button()
         Me.groupBox1 = New System.Windows.Forms.GroupBox()
@@ -43,17 +44,20 @@ Partial Class FrmModificarAuto
         Me.label6 = New System.Windows.Forms.Label()
         Me.label7 = New System.Windows.Forms.Label()
         Me.label8 = New System.Windows.Forms.Label()
-        Me.cmbCliente = New System.Windows.Forms.ComboBox()
         Me.txtMarca = New System.Windows.Forms.TextBox()
         Me.txtPatente = New System.Windows.Forms.TextBox()
         Me.txtAnio = New System.Windows.Forms.TextBox()
         Me.txtModelo = New System.Windows.Forms.TextBox()
         Me.label2 = New System.Windows.Forms.Label()
         Me.label5 = New System.Windows.Forms.Label()
-        Me.label1 = New System.Windows.Forms.Label()
         Me.label4 = New System.Windows.Forms.Label()
         Me.label3 = New System.Windows.Forms.Label()
+        Me.BecharaDataSet = New BecharaVB.becharaDataSet()
+        Me.ClientesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ClientesTableAdapter = New BecharaVB.becharaDataSetTableAdapters.clientesTableAdapter()
         Me.groupBox1.SuspendLayout()
+        CType(Me.BecharaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ClientesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'button2
@@ -96,14 +100,12 @@ Partial Class FrmModificarAuto
         Me.groupBox1.Controls.Add(Me.label6)
         Me.groupBox1.Controls.Add(Me.label7)
         Me.groupBox1.Controls.Add(Me.label8)
-        Me.groupBox1.Controls.Add(Me.cmbCliente)
         Me.groupBox1.Controls.Add(Me.txtMarca)
         Me.groupBox1.Controls.Add(Me.txtPatente)
         Me.groupBox1.Controls.Add(Me.txtAnio)
         Me.groupBox1.Controls.Add(Me.txtModelo)
         Me.groupBox1.Controls.Add(Me.label2)
         Me.groupBox1.Controls.Add(Me.label5)
-        Me.groupBox1.Controls.Add(Me.label1)
         Me.groupBox1.Controls.Add(Me.label4)
         Me.groupBox1.Controls.Add(Me.label3)
         Me.groupBox1.Location = New System.Drawing.Point(33, 28)
@@ -111,11 +113,11 @@ Partial Class FrmModificarAuto
         Me.groupBox1.Size = New System.Drawing.Size(591, 328)
         Me.groupBox1.TabIndex = 14
         Me.groupBox1.TabStop = False
-        Me.groupBox1.Text = "Datos Del Nuevo Auto"
+        Me.groupBox1.Text = "Datos Del Auto a Modificar"
         '
         'txtCorrea
         '
-        Me.txtCorrea.Location = New System.Drawing.Point(135, 262)
+        Me.txtCorrea.Location = New System.Drawing.Point(135, 230)
         Me.txtCorrea.Name = "txtCorrea"
         Me.txtCorrea.Size = New System.Drawing.Size(118, 20)
         Me.txtCorrea.TabIndex = 28
@@ -123,7 +125,7 @@ Partial Class FrmModificarAuto
         'label13
         '
         Me.label13.AutoSize = True
-        Me.label13.Location = New System.Drawing.Point(29, 262)
+        Me.label13.Location = New System.Drawing.Point(29, 230)
         Me.label13.Name = "label13"
         Me.label13.Size = New System.Drawing.Size(96, 13)
         Me.label13.TabIndex = 26
@@ -131,7 +133,7 @@ Partial Class FrmModificarAuto
         '
         'txtTipoCombustible
         '
-        Me.txtTipoCombustible.Location = New System.Drawing.Point(422, 259)
+        Me.txtTipoCombustible.Location = New System.Drawing.Point(135, 266)
         Me.txtTipoCombustible.Name = "txtTipoCombustible"
         Me.txtTipoCombustible.Size = New System.Drawing.Size(118, 20)
         Me.txtTipoCombustible.TabIndex = 27
@@ -139,7 +141,7 @@ Partial Class FrmModificarAuto
         'label14
         '
         Me.label14.AutoSize = True
-        Me.label14.Location = New System.Drawing.Point(318, 262)
+        Me.label14.Location = New System.Drawing.Point(31, 269)
         Me.label14.Name = "label14"
         Me.label14.Size = New System.Drawing.Size(88, 13)
         Me.label14.TabIndex = 25
@@ -225,7 +227,7 @@ Partial Class FrmModificarAuto
         '
         'txtColor
         '
-        Me.txtColor.Location = New System.Drawing.Point(135, 220)
+        Me.txtColor.Location = New System.Drawing.Point(135, 188)
         Me.txtColor.Name = "txtColor"
         Me.txtColor.Size = New System.Drawing.Size(118, 20)
         Me.txtColor.TabIndex = 14
@@ -233,7 +235,7 @@ Partial Class FrmModificarAuto
         'label6
         '
         Me.label6.AutoSize = True
-        Me.label6.Location = New System.Drawing.Point(31, 223)
+        Me.label6.Location = New System.Drawing.Point(31, 191)
         Me.label6.Name = "label6"
         Me.label6.Size = New System.Drawing.Size(31, 13)
         Me.label6.TabIndex = 13
@@ -257,40 +259,30 @@ Partial Class FrmModificarAuto
         Me.label8.TabIndex = 11
         Me.label8.Text = "Filtro Aceite"
         '
-        'cmbCliente
-        '
-        Me.cmbCliente.DisplayMember = "apellido"
-        Me.cmbCliente.FormattingEnabled = True
-        Me.cmbCliente.Location = New System.Drawing.Point(135, 23)
-        Me.cmbCliente.Name = "cmbCliente"
-        Me.cmbCliente.Size = New System.Drawing.Size(121, 21)
-        Me.cmbCliente.TabIndex = 10
-        Me.cmbCliente.ValueMember = "idCliente"
-        '
         'txtMarca
         '
-        Me.txtMarca.Location = New System.Drawing.Point(135, 60)
+        Me.txtMarca.Location = New System.Drawing.Point(135, 28)
         Me.txtMarca.Name = "txtMarca"
         Me.txtMarca.Size = New System.Drawing.Size(118, 20)
         Me.txtMarca.TabIndex = 9
         '
         'txtPatente
         '
-        Me.txtPatente.Location = New System.Drawing.Point(135, 180)
+        Me.txtPatente.Location = New System.Drawing.Point(135, 148)
         Me.txtPatente.Name = "txtPatente"
         Me.txtPatente.Size = New System.Drawing.Size(118, 20)
         Me.txtPatente.TabIndex = 8
         '
         'txtAnio
         '
-        Me.txtAnio.Location = New System.Drawing.Point(135, 139)
+        Me.txtAnio.Location = New System.Drawing.Point(135, 107)
         Me.txtAnio.Name = "txtAnio"
         Me.txtAnio.Size = New System.Drawing.Size(118, 20)
         Me.txtAnio.TabIndex = 7
         '
         'txtModelo
         '
-        Me.txtModelo.Location = New System.Drawing.Point(135, 99)
+        Me.txtModelo.Location = New System.Drawing.Point(135, 67)
         Me.txtModelo.Name = "txtModelo"
         Me.txtModelo.Size = New System.Drawing.Size(118, 20)
         Me.txtModelo.TabIndex = 6
@@ -298,7 +290,7 @@ Partial Class FrmModificarAuto
         'label2
         '
         Me.label2.AutoSize = True
-        Me.label2.Location = New System.Drawing.Point(31, 63)
+        Me.label2.Location = New System.Drawing.Point(31, 31)
         Me.label2.Name = "label2"
         Me.label2.Size = New System.Drawing.Size(37, 13)
         Me.label2.TabIndex = 1
@@ -307,25 +299,16 @@ Partial Class FrmModificarAuto
         'label5
         '
         Me.label5.AutoSize = True
-        Me.label5.Location = New System.Drawing.Point(31, 102)
+        Me.label5.Location = New System.Drawing.Point(31, 70)
         Me.label5.Name = "label5"
         Me.label5.Size = New System.Drawing.Size(42, 13)
         Me.label5.TabIndex = 4
         Me.label5.Text = "Modelo"
         '
-        'label1
-        '
-        Me.label1.AutoSize = True
-        Me.label1.Location = New System.Drawing.Point(31, 32)
-        Me.label1.Name = "label1"
-        Me.label1.Size = New System.Drawing.Size(39, 13)
-        Me.label1.TabIndex = 0
-        Me.label1.Text = "Cliente"
-        '
         'label4
         '
         Me.label4.AutoSize = True
-        Me.label4.Location = New System.Drawing.Point(29, 183)
+        Me.label4.Location = New System.Drawing.Point(29, 151)
         Me.label4.Name = "label4"
         Me.label4.Size = New System.Drawing.Size(44, 13)
         Me.label4.TabIndex = 3
@@ -334,11 +317,25 @@ Partial Class FrmModificarAuto
         'label3
         '
         Me.label3.AutoSize = True
-        Me.label3.Location = New System.Drawing.Point(31, 142)
+        Me.label3.Location = New System.Drawing.Point(31, 110)
         Me.label3.Name = "label3"
         Me.label3.Size = New System.Drawing.Size(26, 13)
         Me.label3.TabIndex = 2
         Me.label3.Text = "Año"
+        '
+        'BecharaDataSet
+        '
+        Me.BecharaDataSet.DataSetName = "becharaDataSet"
+        Me.BecharaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ClientesBindingSource
+        '
+        Me.ClientesBindingSource.DataMember = "clientes"
+        Me.ClientesBindingSource.DataSource = Me.BecharaDataSet
+        '
+        'ClientesTableAdapter
+        '
+        Me.ClientesTableAdapter.ClearBeforeFill = True
         '
         'FrmModificarAuto
         '
@@ -352,6 +349,8 @@ Partial Class FrmModificarAuto
         Me.Text = "FrmModificarAuto"
         Me.groupBox1.ResumeLayout(False)
         Me.groupBox1.PerformLayout()
+        CType(Me.BecharaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ClientesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -377,14 +376,15 @@ Partial Class FrmModificarAuto
     Private WithEvents label6 As Label
     Private WithEvents label7 As Label
     Private WithEvents label8 As Label
-    Public WithEvents cmbCliente As ComboBox
     Public WithEvents txtMarca As TextBox
     Public WithEvents txtPatente As TextBox
     Public WithEvents txtAnio As TextBox
     Public WithEvents txtModelo As TextBox
     Private WithEvents label2 As Label
     Private WithEvents label5 As Label
-    Private WithEvents label1 As Label
     Private WithEvents label4 As Label
     Private WithEvents label3 As Label
+    Friend WithEvents BecharaDataSet As becharaDataSet
+    Friend WithEvents ClientesBindingSource As BindingSource
+    Friend WithEvents ClientesTableAdapter As becharaDataSetTableAdapters.clientesTableAdapter
 End Class

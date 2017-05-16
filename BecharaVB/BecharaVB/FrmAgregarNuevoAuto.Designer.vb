@@ -26,6 +26,7 @@ Partial Class FrmAgregarNuevoAuto
         Me.button2 = New System.Windows.Forms.Button()
         Me.button1 = New System.Windows.Forms.Button()
         Me.groupBox1 = New System.Windows.Forms.GroupBox()
+        Me.cmbTipoCombustible = New System.Windows.Forms.ComboBox()
         Me.txtCorrea = New System.Windows.Forms.TextBox()
         Me.label13 = New System.Windows.Forms.Label()
         Me.label14 = New System.Windows.Forms.Label()
@@ -58,7 +59,6 @@ Partial Class FrmAgregarNuevoAuto
         Me.ClientesTableAdapter = New BecharaVB.becharaDataSetTableAdapters.clientesTableAdapter()
         Me.AutosTableAdapter = New BecharaVB.becharaDataSetTableAdapters.autosTableAdapter()
         Me.AutosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.cmbTipoCombustible = New System.Windows.Forms.ComboBox()
         Me.groupBox1.SuspendLayout()
         CType(Me.ClientesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BecharaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -121,6 +121,17 @@ Partial Class FrmAgregarNuevoAuto
         Me.groupBox1.TabIndex = 11
         Me.groupBox1.TabStop = False
         Me.groupBox1.Text = "Datos Del Nuevo Auto"
+        '
+        'cmbTipoCombustible
+        '
+        Me.cmbTipoCombustible.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.cmbTipoCombustible.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbTipoCombustible.FormattingEnabled = True
+        Me.cmbTipoCombustible.Items.AddRange(New Object() {"Nafta", "Diesel", "GNC"})
+        Me.cmbTipoCombustible.Location = New System.Drawing.Point(422, 259)
+        Me.cmbTipoCombustible.Name = "cmbTipoCombustible"
+        Me.cmbTipoCombustible.Size = New System.Drawing.Size(121, 21)
+        Me.cmbTipoCombustible.TabIndex = 29
         '
         'txtCorrea
         '
@@ -261,7 +272,6 @@ Partial Class FrmAgregarNuevoAuto
         '
         'cmbCliente
         '
-        Me.cmbCliente.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.ClientesBindingSource, "idCliente", True))
         Me.cmbCliente.DataSource = Me.ClientesBindingSource
         Me.cmbCliente.DisplayMember = "apellido"
         Me.cmbCliente.FormattingEnabled = True
@@ -269,7 +279,6 @@ Partial Class FrmAgregarNuevoAuto
         Me.cmbCliente.Name = "cmbCliente"
         Me.cmbCliente.Size = New System.Drawing.Size(121, 21)
         Me.cmbCliente.TabIndex = 10
-        Me.cmbCliente.ValueMember = "idCliente"
         '
         'ClientesBindingSource
         '
@@ -366,17 +375,6 @@ Partial Class FrmAgregarNuevoAuto
         '
         Me.AutosBindingSource.DataMember = "autos"
         Me.AutosBindingSource.DataSource = Me.BecharaDataSet
-        '
-        'cmbTipoCombustible
-        '
-        Me.cmbTipoCombustible.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
-        Me.cmbTipoCombustible.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbTipoCombustible.FormattingEnabled = True
-        Me.cmbTipoCombustible.Items.AddRange(New Object() {"Nafta", "Diesel", "GNC"})
-        Me.cmbTipoCombustible.Location = New System.Drawing.Point(422, 259)
-        Me.cmbTipoCombustible.Name = "cmbTipoCombustible"
-        Me.cmbTipoCombustible.Size = New System.Drawing.Size(121, 21)
-        Me.cmbTipoCombustible.TabIndex = 29
         '
         'FrmAgregarNuevoAuto
         '

@@ -1,4 +1,5 @@
 ﻿Public Class principal
+
     Public Sub button1_Click(sender As Object, e As EventArgs) Handles button1.Click
         If (DialogResult.OK = FrmAgregarCliente.ShowDialog()) Then
             Dim nuevocliente As DataRowView
@@ -24,6 +25,7 @@
         Me.ClientesTableAdapter.Fill(Me.BecharaDataSet.clientes)
         Me.AutosTableAdapter.Fill(Me.BecharaDataSet.autos)
 
+
     End Sub
 
     Private Sub button3_Click(sender As Object, e As EventArgs) Handles button3.Click
@@ -45,8 +47,8 @@
 
 
         Catch ex As NullReferenceException
-                MessageBox.Show("No se ha seleccionado ningun cliente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                End Try
+            MessageBox.Show("No se ha seleccionado ningun cliente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
 
 
 
@@ -111,6 +113,7 @@
     End Sub
 
     Private Sub textBox1_TextChanged(sender As Object, e As EventArgs) Handles txtBuscaCliente.TextChanged
+
         Try
             Dim filtro As String
             filtro = cmbFiltroCliente.SelectedItem.ToString
