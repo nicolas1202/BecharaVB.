@@ -8,7 +8,7 @@
     End Sub
 
     Private Function Valida() As Boolean
-        If String.IsNullOrEmpty(txtMarca.Text) Or String.IsNullOrEmpty(txtModelo.Text) Or Integer.Parse(txtAnio.Text) Or String.IsNullOrEmpty(txtColor.Text) Or String.IsNullOrEmpty(txtFiltroAceite.Text Or String.IsNullOrEmpty(txtFiltroCombustible.Text) Or String.IsNullOrEmpty(txtFiltroHabitaculo.Text) Or String.IsNullOrEmpty(txtAceiteMotor.Text) Or Integer.Parse(txtKilometraje.Text) Or String.IsNullOrEmpty(txtCorrea.Text) Or String.IsNullOrEmpty(txtTipoCombustible.Text)) Then
+        If String.IsNullOrEmpty(txtMarca.Text) Or String.IsNullOrEmpty(txtModelo.Text) Or String.IsNullOrEmpty(txtAnio.Text.ToString) Or String.IsNullOrEmpty(txtColor.Text) Or String.IsNullOrEmpty(txtFiltroAceite.Text Or String.IsNullOrEmpty(txtFiltroCombustible.Text) Or String.IsNullOrEmpty(txtFiltroHabitaculo.Text) Or String.IsNullOrEmpty(txtAceiteMotor.Text) Or String.IsNullOrEmpty(txtKilometraje.Text.ToString) Or String.IsNullOrEmpty(txtCorrea.Text) Or String.IsNullOrEmpty(txtTipoCombustible.Text)) Then
 
             Return False
 

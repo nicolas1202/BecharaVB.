@@ -573,6 +573,8 @@ Partial Public Class becharaDataSet
         
         Private columnclientes_idCliente As Global.System.Data.DataColumn
         
+        Private columnpatente As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -729,6 +731,14 @@ Partial Public Class becharaDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property patenteColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnpatente
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -765,9 +775,9 @@ Partial Public Class becharaDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddautosRow(ByVal marca As String, ByVal modelo As String, ByVal anio As Integer, ByVal color As String, ByVal imagen As String, ByVal filtroAceite As String, ByVal filtroAire As String, ByVal filtroCombustible As String, ByVal filtroHabitaculo As String, ByVal aceiteMotor As String, ByVal kilometraje As Integer, ByVal distribucion As String, ByVal tipoCombustible As String, ByVal parentclientesRowByfk_autos_clientes1 As clientesRow) As autosRow
+        Public Overloads Function AddautosRow(ByVal marca As String, ByVal modelo As String, ByVal anio As Integer, ByVal color As String, ByVal imagen As String, ByVal filtroAceite As String, ByVal filtroAire As String, ByVal filtroCombustible As String, ByVal filtroHabitaculo As String, ByVal aceiteMotor As String, ByVal kilometraje As Integer, ByVal distribucion As String, ByVal tipoCombustible As String, ByVal parentclientesRowByfk_autos_clientes1 As clientesRow, ByVal patente As String) As autosRow
             Dim rowautosRow As autosRow = CType(Me.NewRow,autosRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, marca, modelo, anio, color, imagen, filtroAceite, filtroAire, filtroCombustible, filtroHabitaculo, aceiteMotor, kilometraje, distribucion, tipoCombustible, Nothing}
+            Dim columnValuesArray() As Object = New Object() {Nothing, marca, modelo, anio, color, imagen, filtroAceite, filtroAire, filtroCombustible, filtroHabitaculo, aceiteMotor, kilometraje, distribucion, tipoCombustible, Nothing, patente}
             If (Not (parentclientesRowByfk_autos_clientes1) Is Nothing) Then
                 columnValuesArray(14) = parentclientesRowByfk_autos_clientes1(0)
             End If
@@ -814,6 +824,7 @@ Partial Public Class becharaDataSet
             Me.columndistribucion = MyBase.Columns("distribucion")
             Me.columntipoCombustible = MyBase.Columns("tipoCombustible")
             Me.columnclientes_idCliente = MyBase.Columns("clientes_idCliente")
+            Me.columnpatente = MyBase.Columns("patente")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -849,6 +860,8 @@ Partial Public Class becharaDataSet
             MyBase.Columns.Add(Me.columntipoCombustible)
             Me.columnclientes_idCliente = New Global.System.Data.DataColumn("clientes_idCliente", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnclientes_idCliente)
+            Me.columnpatente = New Global.System.Data.DataColumn("patente", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnpatente)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnidAuto, Me.columnclientes_idCliente}, true))
             Me.columnidAuto.AutoIncrement = true
             Me.columnidAuto.AutoIncrementSeed = -1
@@ -877,6 +890,8 @@ Partial Public Class becharaDataSet
             Me.columntipoCombustible.AllowDBNull = false
             Me.columntipoCombustible.MaxLength = 30
             Me.columnclientes_idCliente.AllowDBNull = false
+            Me.columnpatente.AllowDBNull = false
+            Me.columnpatente.MaxLength = 45
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1028,8 +1043,6 @@ Partial Public Class becharaDataSet
         
         Private columndni As Global.System.Data.DataColumn
         
-        Private columnidAuto As Global.System.Data.DataColumn
-        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -1122,14 +1135,6 @@ Partial Public Class becharaDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property idAutoColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnidAuto
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -1166,9 +1171,9 @@ Partial Public Class becharaDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddclientesRow(ByVal nombre As String, ByVal apellido As String, ByVal direccion As String, ByVal telefono As Integer, ByVal fechaNacimiento As Date, ByVal dni As Integer, ByVal idAuto As String) As clientesRow
+        Public Overloads Function AddclientesRow(ByVal nombre As String, ByVal apellido As String, ByVal direccion As String, ByVal telefono As Integer, ByVal fechaNacimiento As Date, ByVal dni As Integer) As clientesRow
             Dim rowclientesRow As clientesRow = CType(Me.NewRow,clientesRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, nombre, apellido, direccion, telefono, fechaNacimiento, dni, idAuto}
+            Dim columnValuesArray() As Object = New Object() {Nothing, nombre, apellido, direccion, telefono, fechaNacimiento, dni}
             rowclientesRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowclientesRow)
             Return rowclientesRow
@@ -1204,7 +1209,6 @@ Partial Public Class becharaDataSet
             Me.columntelefono = MyBase.Columns("telefono")
             Me.columnfechaNacimiento = MyBase.Columns("fechaNacimiento")
             Me.columndni = MyBase.Columns("dni")
-            Me.columnidAuto = MyBase.Columns("idAuto")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1224,8 +1228,6 @@ Partial Public Class becharaDataSet
             MyBase.Columns.Add(Me.columnfechaNacimiento)
             Me.columndni = New Global.System.Data.DataColumn("dni", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columndni)
-            Me.columnidAuto = New Global.System.Data.DataColumn("idAuto", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnidAuto)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnidCliente}, true))
             Me.columnidCliente.AutoIncrement = true
             Me.columnidCliente.AutoIncrementSeed = -1
@@ -3594,6 +3596,17 @@ Partial Public Class becharaDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property patente() As String
+            Get
+                Return CType(Me(Me.tableautos.patenteColumn),String)
+            End Get
+            Set
+                Me(Me.tableautos.patenteColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property clientesRow() As clientesRow
             Get
                 Return CType(Me.GetParentRow(Me.Table.ParentRelations("fk_autos_clientes1")),clientesRow)
@@ -3719,33 +3732,6 @@ Partial Public Class becharaDataSet
                 Me(Me.tableclientes.dniColumn) = value
             End Set
         End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property idAuto() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableclientes.idAutoColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'idAuto' in table 'clientes' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableclientes.idAutoColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsidAutoNull() As Boolean
-            Return Me.IsNull(Me.tableclientes.idAutoColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetidAutoNull()
-            Me(Me.tableclientes.idAutoColumn) = Global.System.Convert.DBNull
-        End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -4875,6 +4861,7 @@ Namespace becharaDataSetTableAdapters
             tableMapping.ColumnMappings.Add("distribucion", "distribucion")
             tableMapping.ColumnMappings.Add("tipoCombustible", "tipoCombustible")
             tableMapping.ColumnMappings.Add("clientes_idCliente", "clientes_idCliente")
+            tableMapping.ColumnMappings.Add("patente", "patente")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -4883,8 +4870,8 @@ Namespace becharaDataSetTableAdapters
                 "D ((@p7 = 1 AND `imagen` IS NULL) OR (`imagen` = @p8)) AND (`filtroAceite` = @p9"& _ 
                 ") AND (`filtroAire` = @p10) AND (`filtroCombustible` = @p11) AND (`filtroHabitac"& _ 
                 "ulo` = @p12) AND (`aceiteMotor` = @p13) AND (`kilometraje` = @p14) AND (`distrib"& _ 
-                "ucion` = @p15) AND (`tipoCombustible` = @p16) AND (`clientes_idCliente` = @p17))"& _ 
-                ""
+                "ucion` = @p15) AND (`tipoCombustible` = @p16) AND (`clientes_idCliente` = @p17) "& _ 
+                "AND (`patente` = @p18))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Dim param As Global.MySql.Data.MySqlClient.MySqlParameter = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p1"
@@ -5024,12 +5011,21 @@ Namespace becharaDataSetTableAdapters
             param.SourceColumn = "clientes_idCliente"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.DeleteCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p18"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.IsNullable = true
+            param.SourceColumn = "patente"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.DeleteCommand.Parameters.Add(param)
             Me._adapter.InsertCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO `autos` (`marca`, `modelo`, `anio`, `color`, `imagen`, `filtroAceite`"& _ 
                 ", `filtroAire`, `filtroCombustible`, `filtroHabitaculo`, `aceiteMotor`, `kilomet"& _ 
-                "raje`, `distribucion`, `tipoCombustible`, `clientes_idCliente`) VALUES (@p1, @p2"& _ 
-                ", @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14)"
+                "raje`, `distribucion`, `tipoCombustible`, `clientes_idCliente`, `patente`) VALUE"& _ 
+                "S (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p"& _ 
+                "15)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p1"
@@ -5129,18 +5125,26 @@ Namespace becharaDataSetTableAdapters
             param.IsNullable = true
             param.SourceColumn = "clientes_idCliente"
             Me._adapter.InsertCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p15"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.IsNullable = true
+            param.SourceColumn = "patente"
+            Me._adapter.InsertCommand.Parameters.Add(param)
             Me._adapter.UpdateCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE `autos` SET `marca` = @p1, `modelo` = @p2, `anio` = @p3, `color` = @p4, `i"& _ 
                 "magen` = @p5, `filtroAceite` = @p6, `filtroAire` = @p7, `filtroCombustible` = @p"& _ 
                 "8, `filtroHabitaculo` = @p9, `aceiteMotor` = @p10, `kilometraje` = @p11, `distri"& _ 
-                "bucion` = @p12, `tipoCombustible` = @p13, `clientes_idCliente` = @p14 WHERE ((`i"& _ 
-                "dAuto` = @p15) AND (`marca` = @p16) AND (`modelo` = @p17) AND (`anio` = @p18) AN"& _ 
-                "D ((@p19 = 1 AND `color` IS NULL) OR (`color` = @p20)) AND ((@p21 = 1 AND `image"& _ 
-                "n` IS NULL) OR (`imagen` = @p22)) AND (`filtroAceite` = @p23) AND (`filtroAire` "& _ 
-                "= @p24) AND (`filtroCombustible` = @p25) AND (`filtroHabitaculo` = @p26) AND (`a"& _ 
-                "ceiteMotor` = @p27) AND (`kilometraje` = @p28) AND (`distribucion` = @p29) AND ("& _ 
-                "`tipoCombustible` = @p30) AND (`clientes_idCliente` = @p31))"
+                "bucion` = @p12, `tipoCombustible` = @p13, `clientes_idCliente` = @p14, `patente`"& _ 
+                " = @p15 WHERE ((`idAuto` = @p16) AND (`marca` = @p17) AND (`modelo` = @p18) AND "& _ 
+                "(`anio` = @p19) AND ((@p20 = 1 AND `color` IS NULL) OR (`color` = @p21)) AND ((@"& _ 
+                "p22 = 1 AND `imagen` IS NULL) OR (`imagen` = @p23)) AND (`filtroAceite` = @p24) "& _ 
+                "AND (`filtroAire` = @p25) AND (`filtroCombustible` = @p26) AND (`filtroHabitacul"& _ 
+                "o` = @p27) AND (`aceiteMotor` = @p28) AND (`kilometraje` = @p29) AND (`distribuc"& _ 
+                "ion` = @p30) AND (`tipoCombustible` = @p31) AND (`clientes_idCliente` = @p32) AN"& _ 
+                "D (`patente` = @p33))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p1"
@@ -5242,6 +5246,13 @@ Namespace becharaDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p15"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.IsNullable = true
+            param.SourceColumn = "patente"
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p16"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
@@ -5249,7 +5260,7 @@ Namespace becharaDataSetTableAdapters
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p16"
+            param.ParameterName = "@p17"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
@@ -5257,7 +5268,7 @@ Namespace becharaDataSetTableAdapters
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p17"
+            param.ParameterName = "@p18"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
@@ -5265,7 +5276,7 @@ Namespace becharaDataSetTableAdapters
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p18"
+            param.ParameterName = "@p19"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
@@ -5273,45 +5284,37 @@ Namespace becharaDataSetTableAdapters
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p19"
+            param.ParameterName = "@p20"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
             param.SourceColumn = "color"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             param.SourceColumnNullMapping = true
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p20"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "color"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p21"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.IsNullable = true
+            param.SourceColumn = "color"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p22"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
             param.SourceColumn = "imagen"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             param.SourceColumnNullMapping = true
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p22"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "imagen"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p23"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
-            param.SourceColumn = "filtroAceite"
+            param.SourceColumn = "imagen"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
@@ -5319,7 +5322,7 @@ Namespace becharaDataSetTableAdapters
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
-            param.SourceColumn = "filtroAire"
+            param.SourceColumn = "filtroAceite"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
@@ -5327,7 +5330,7 @@ Namespace becharaDataSetTableAdapters
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
-            param.SourceColumn = "filtroCombustible"
+            param.SourceColumn = "filtroAire"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
@@ -5335,7 +5338,7 @@ Namespace becharaDataSetTableAdapters
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
-            param.SourceColumn = "filtroHabitaculo"
+            param.SourceColumn = "filtroCombustible"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
@@ -5343,11 +5346,19 @@ Namespace becharaDataSetTableAdapters
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
-            param.SourceColumn = "aceiteMotor"
+            param.SourceColumn = "filtroHabitaculo"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p28"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.IsNullable = true
+            param.SourceColumn = "aceiteMotor"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p29"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
@@ -5355,7 +5366,7 @@ Namespace becharaDataSetTableAdapters
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p29"
+            param.ParameterName = "@p30"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
@@ -5363,7 +5374,7 @@ Namespace becharaDataSetTableAdapters
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p30"
+            param.ParameterName = "@p31"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
@@ -5371,11 +5382,19 @@ Namespace becharaDataSetTableAdapters
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p31"
+            param.ParameterName = "@p32"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
             param.SourceColumn = "clientes_idCliente"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p33"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.IsNullable = true
+            param.SourceColumn = "patente"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
         End Sub
@@ -5393,9 +5412,9 @@ Namespace becharaDataSetTableAdapters
             Me._commandCollection = New Global.MySql.Data.MySqlClient.MySqlCommand(0) {}
             Me._commandCollection(0) = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT `idAuto`, `marca`, `modelo`, `anio`, `color`, `imagen`, `filtroAceite`, `f"& _ 
-                "iltroAire`, `filtroCombustible`, `filtroHabitaculo`, `aceiteMotor`, `kilometraje"& _ 
-                "`, `distribucion`, `tipoCombustible`, `clientes_idCliente` FROM `autos`"
+            Me._commandCollection(0).CommandText = "SELECT idAuto, marca, modelo, anio, color, imagen, filtroAceite, filtroAire, filt"& _ 
+                "roCombustible, filtroHabitaculo, aceiteMotor, kilometraje, distribucion, tipoCom"& _ 
+                "bustible, clientes_idCliente, patente FROM autos"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -5455,7 +5474,23 @@ Namespace becharaDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal p1 As Integer, ByVal p2 As String, ByVal p3 As String, ByVal p4 As Integer, ByVal p6 As String, ByVal p8 As String, ByVal p9 As String, ByVal p10 As String, ByVal p11 As String, ByVal p12 As String, ByVal p13 As String, ByVal p14 As Integer, ByVal p15 As String, ByVal p16 As String, ByVal p17 As Integer) As Integer
+        Public Overloads Overridable Function Delete( _
+                    ByVal p1 As Integer,  _
+                    ByVal p2 As String,  _
+                    ByVal p3 As String,  _
+                    ByVal p4 As Integer,  _
+                    ByVal p6 As String,  _
+                    ByVal p8 As String,  _
+                    ByVal p9 As String,  _
+                    ByVal p10 As String,  _
+                    ByVal p11 As String,  _
+                    ByVal p12 As String,  _
+                    ByVal p13 As String,  _
+                    ByVal p14 As Integer,  _
+                    ByVal p15 As String,  _
+                    ByVal p16 As String,  _
+                    ByVal p17 As Integer,  _
+                    ByVal p18 As String) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(p1,Integer)
             If (p2 Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("p2")
@@ -5519,6 +5554,11 @@ Namespace becharaDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(15).Value = CType(p16,String)
             End If
             Me.Adapter.DeleteCommand.Parameters(16).Value = CType(p17,Integer)
+            If (p18 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("p18")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(p18,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -5538,7 +5578,7 @@ Namespace becharaDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal p1 As String, ByVal p2 As String, ByVal p3 As Integer, ByVal p4 As String, ByVal p5 As String, ByVal p6 As String, ByVal p7 As String, ByVal p8 As String, ByVal p9 As String, ByVal p10 As String, ByVal p11 As Integer, ByVal p12 As String, ByVal p13 As String, ByVal p14 As Integer) As Integer
+        Public Overloads Overridable Function Insert(ByVal p1 As String, ByVal p2 As String, ByVal p3 As Integer, ByVal p4 As String, ByVal p5 As String, ByVal p6 As String, ByVal p7 As String, ByVal p8 As String, ByVal p9 As String, ByVal p10 As String, ByVal p11 As Integer, ByVal p12 As String, ByVal p13 As String, ByVal p14 As Integer, ByVal p15 As String) As Integer
             If (p1 Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("p1")
             Else
@@ -5597,6 +5637,11 @@ Namespace becharaDataSetTableAdapters
                 Me.Adapter.InsertCommand.Parameters(12).Value = CType(p13,String)
             End If
             Me.Adapter.InsertCommand.Parameters(13).Value = CType(p14,Integer)
+            If (p15 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("p15")
+            Else
+                Me.Adapter.InsertCommand.Parameters(14).Value = CType(p15,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -5631,21 +5676,23 @@ Namespace becharaDataSetTableAdapters
                     ByVal p12 As String,  _
                     ByVal p13 As String,  _
                     ByVal p14 As Integer,  _
-                    ByVal p15 As Integer,  _
-                    ByVal p16 As String,  _
+                    ByVal p15 As String,  _
+                    ByVal p16 As Integer,  _
                     ByVal p17 As String,  _
-                    ByVal p18 As Integer,  _
-                    ByVal p20 As String,  _
-                    ByVal p22 As String,  _
+                    ByVal p18 As String,  _
+                    ByVal p19 As Integer,  _
+                    ByVal p21 As String,  _
                     ByVal p23 As String,  _
                     ByVal p24 As String,  _
                     ByVal p25 As String,  _
                     ByVal p26 As String,  _
                     ByVal p27 As String,  _
-                    ByVal p28 As Integer,  _
-                    ByVal p29 As String,  _
+                    ByVal p28 As String,  _
+                    ByVal p29 As Integer,  _
                     ByVal p30 As String,  _
-                    ByVal p31 As Integer) As Integer
+                    ByVal p31 As String,  _
+                    ByVal p32 As Integer,  _
+                    ByVal p33 As String) As Integer
             If (p1 Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("p1")
             Else
@@ -5704,35 +5751,35 @@ Namespace becharaDataSetTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(12).Value = CType(p13,String)
             End If
             Me.Adapter.UpdateCommand.Parameters(13).Value = CType(p14,Integer)
-            Me.Adapter.UpdateCommand.Parameters(14).Value = CType(p15,Integer)
-            If (p16 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p16")
+            If (p15 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("p15")
             Else
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(p16,String)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(p15,String)
             End If
+            Me.Adapter.UpdateCommand.Parameters(15).Value = CType(p16,Integer)
             If (p17 Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("p17")
             Else
                 Me.Adapter.UpdateCommand.Parameters(16).Value = CType(p17,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(17).Value = CType(p18,Integer)
-            If (p20 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
+            If (p18 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("p18")
             Else
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(p20,String)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(p18,String)
             End If
-            If (p22 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
+            Me.Adapter.UpdateCommand.Parameters(18).Value = CType(p19,Integer)
+            If (p21 Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(p22,String)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(p21,String)
             End If
             If (p23 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p23")
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
             Else
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(0,Object)
                 Me.Adapter.UpdateCommand.Parameters(22).Value = CType(p23,String)
             End If
             If (p24 Is Nothing) Then
@@ -5755,18 +5802,28 @@ Namespace becharaDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(26).Value = CType(p27,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(27).Value = CType(p28,Integer)
-            If (p29 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p29")
+            If (p28 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("p28")
             Else
-                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(p29,String)
+                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(p28,String)
             End If
+            Me.Adapter.UpdateCommand.Parameters(28).Value = CType(p29,Integer)
             If (p30 Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("p30")
             Else
                 Me.Adapter.UpdateCommand.Parameters(29).Value = CType(p30,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(30).Value = CType(p31,Integer)
+            If (p31 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("p31")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(p31,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(31).Value = CType(p32,Integer)
+            If (p33 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("p33")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(p33,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -5800,22 +5857,24 @@ Namespace becharaDataSetTableAdapters
                     ByVal p11 As Integer,  _
                     ByVal p12 As String,  _
                     ByVal p13 As String,  _
-                    ByVal p15 As Integer,  _
-                    ByVal p16 As String,  _
+                    ByVal p15 As String,  _
+                    ByVal p16 As Integer,  _
                     ByVal p17 As String,  _
-                    ByVal p18 As Integer,  _
-                    ByVal p20 As String,  _
-                    ByVal p22 As String,  _
+                    ByVal p18 As String,  _
+                    ByVal p19 As Integer,  _
+                    ByVal p21 As String,  _
                     ByVal p23 As String,  _
                     ByVal p24 As String,  _
                     ByVal p25 As String,  _
                     ByVal p26 As String,  _
                     ByVal p27 As String,  _
-                    ByVal p28 As Integer,  _
-                    ByVal p29 As String,  _
+                    ByVal p28 As String,  _
+                    ByVal p29 As Integer,  _
                     ByVal p30 As String,  _
-                    ByVal p31 As Integer) As Integer
-            Return Me.Update(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p31, p15, p16, p17, p18, p20, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31)
+                    ByVal p31 As String,  _
+                    ByVal p32 As Integer,  _
+                    ByVal p33 As String) As Integer
+            Return Me.Update(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p32, p15, p16, p17, p18, p19, p21, p23, p24, p25, p26, p27, p28, p29, p30, p31, p32, p33)
         End Function
     End Class
     
