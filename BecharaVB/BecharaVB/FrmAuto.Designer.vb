@@ -32,7 +32,14 @@ Partial Class FrmAuto
         Me.textBox1 = New System.Windows.Forms.TextBox()
         Me.groupBox1 = New System.Windows.Forms.GroupBox()
         Me.AutosDataGridView = New System.Windows.Forms.DataGridView()
+        Me.AutosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BecharaDataSet = New BecharaVB.becharaDataSet()
+        Me.AutosTableAdapter = New BecharaVB.becharaDataSetTableAdapters.autosTableAdapter()
+        Me.TableAdapterManager = New BecharaVB.becharaDataSetTableAdapters.TableAdapterManager()
+        Me.ClientesTableAdapter = New BecharaVB.becharaDataSetTableAdapters.clientesTableAdapter()
+        Me.ClientesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.clientes_idCliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.patente = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -45,12 +52,6 @@ Partial Class FrmAuto
         Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AutosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BecharaDataSet = New BecharaVB.becharaDataSet()
-        Me.AutosTableAdapter = New BecharaVB.becharaDataSetTableAdapters.autosTableAdapter()
-        Me.TableAdapterManager = New BecharaVB.becharaDataSetTableAdapters.TableAdapterManager()
-        Me.ClientesTableAdapter = New BecharaVB.becharaDataSetTableAdapters.clientesTableAdapter()
-        Me.ClientesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.groupBox1.SuspendLayout()
         CType(Me.AutosDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AutosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -139,7 +140,7 @@ Partial Class FrmAuto
         Me.AutosDataGridView.AllowUserToDeleteRows = False
         Me.AutosDataGridView.AutoGenerateColumns = False
         Me.AutosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.AutosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.clientes_idCliente, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12, Me.DataGridViewTextBoxColumn13, Me.DataGridViewTextBoxColumn14})
+        Me.AutosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.clientes_idCliente, Me.patente, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12, Me.DataGridViewTextBoxColumn13, Me.DataGridViewTextBoxColumn14})
         Me.AutosDataGridView.DataSource = Me.AutosBindingSource
         Me.AutosDataGridView.Location = New System.Drawing.Point(19, 31)
         Me.AutosDataGridView.Name = "AutosDataGridView"
@@ -147,12 +148,55 @@ Partial Class FrmAuto
         Me.AutosDataGridView.Size = New System.Drawing.Size(1005, 220)
         Me.AutosDataGridView.TabIndex = 0
         '
+        'AutosBindingSource
+        '
+        Me.AutosBindingSource.DataMember = "autos"
+        Me.AutosBindingSource.DataSource = Me.BecharaDataSet
+        '
+        'BecharaDataSet
+        '
+        Me.BecharaDataSet.DataSetName = "becharaDataSet"
+        Me.BecharaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'AutosTableAdapter
+        '
+        Me.AutosTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.autosTableAdapter = Me.AutosTableAdapter
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.clientesTableAdapter = Me.ClientesTableAdapter
+        Me.TableAdapterManager.ordentrabajo_has_tipotrabajoTableAdapter = Nothing
+        Me.TableAdapterManager.ordentrabajoTableAdapter = Nothing
+        Me.TableAdapterManager.presupuesto_has_tipotrabajoTableAdapter = Nothing
+        Me.TableAdapterManager.presupuestoTableAdapter = Nothing
+        Me.TableAdapterManager.tipotrabajoTableAdapter = Nothing
+        Me.TableAdapterManager.turnosTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = BecharaVB.becharaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'ClientesTableAdapter
+        '
+        Me.ClientesTableAdapter.ClearBeforeFill = True
+        '
+        'ClientesBindingSource
+        '
+        Me.ClientesBindingSource.DataMember = "clientes"
+        Me.ClientesBindingSource.DataSource = Me.BecharaDataSet
+        '
         'clientes_idCliente
         '
         Me.clientes_idCliente.DataPropertyName = "clientes_idCliente"
         Me.clientes_idCliente.HeaderText = "Cliente"
         Me.clientes_idCliente.Name = "clientes_idCliente"
         Me.clientes_idCliente.ReadOnly = True
+        '
+        'patente
+        '
+        Me.patente.DataPropertyName = "patente"
+        Me.patente.HeaderText = "patente"
+        Me.patente.Name = "patente"
+        Me.patente.ReadOnly = True
         '
         'DataGridViewTextBoxColumn2
         '
@@ -238,42 +282,6 @@ Partial Class FrmAuto
         Me.DataGridViewTextBoxColumn14.Name = "DataGridViewTextBoxColumn14"
         Me.DataGridViewTextBoxColumn14.ReadOnly = True
         '
-        'AutosBindingSource
-        '
-        Me.AutosBindingSource.DataMember = "autos"
-        Me.AutosBindingSource.DataSource = Me.BecharaDataSet
-        '
-        'BecharaDataSet
-        '
-        Me.BecharaDataSet.DataSetName = "becharaDataSet"
-        Me.BecharaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'AutosTableAdapter
-        '
-        Me.AutosTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.autosTableAdapter = Me.AutosTableAdapter
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.clientesTableAdapter = Me.ClientesTableAdapter
-        Me.TableAdapterManager.ordentrabajo_has_tipotrabajoTableAdapter = Nothing
-        Me.TableAdapterManager.ordentrabajoTableAdapter = Nothing
-        Me.TableAdapterManager.presupuesto_has_tipotrabajoTableAdapter = Nothing
-        Me.TableAdapterManager.presupuestoTableAdapter = Nothing
-        Me.TableAdapterManager.tipotrabajoTableAdapter = Nothing
-        Me.TableAdapterManager.turnosTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = BecharaVB.becharaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'ClientesTableAdapter
-        '
-        Me.ClientesTableAdapter.ClearBeforeFill = True
-        '
-        'ClientesBindingSource
-        '
-        Me.ClientesBindingSource.DataMember = "clientes"
-        Me.ClientesBindingSource.DataSource = Me.BecharaDataSet
-        '
         'FrmAuto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -316,6 +324,7 @@ Partial Class FrmAuto
     Friend WithEvents ClientesBindingSource As BindingSource
     Friend WithEvents ClientesTableAdapter As becharaDataSetTableAdapters.clientesTableAdapter
     Friend WithEvents clientes_idCliente As DataGridViewTextBoxColumn
+    Friend WithEvents patente As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn

@@ -44,7 +44,6 @@ Partial Class FrmAgregarNuevoAuto
         Me.label6 = New System.Windows.Forms.Label()
         Me.label7 = New System.Windows.Forms.Label()
         Me.label8 = New System.Windows.Forms.Label()
-        Me.cmbCliente = New System.Windows.Forms.ComboBox()
         Me.ClientesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BecharaDataSet = New BecharaVB.becharaDataSet()
         Me.txtMarca = New System.Windows.Forms.TextBox()
@@ -59,6 +58,7 @@ Partial Class FrmAgregarNuevoAuto
         Me.ClientesTableAdapter = New BecharaVB.becharaDataSetTableAdapters.clientesTableAdapter()
         Me.AutosTableAdapter = New BecharaVB.becharaDataSetTableAdapters.autosTableAdapter()
         Me.AutosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.listClientes = New System.Windows.Forms.ListBox()
         Me.groupBox1.SuspendLayout()
         CType(Me.ClientesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BecharaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -68,7 +68,7 @@ Partial Class FrmAgregarNuevoAuto
         'button2
         '
         Me.button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.button2.Location = New System.Drawing.Point(359, 387)
+        Me.button2.Location = New System.Drawing.Point(362, 542)
         Me.button2.Name = "button2"
         Me.button2.Size = New System.Drawing.Size(75, 31)
         Me.button2.TabIndex = 13
@@ -78,7 +78,7 @@ Partial Class FrmAgregarNuevoAuto
         'button1
         '
         Me.button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.button1.Location = New System.Drawing.Point(214, 387)
+        Me.button1.Location = New System.Drawing.Point(217, 542)
         Me.button1.Name = "button1"
         Me.button1.Size = New System.Drawing.Size(75, 31)
         Me.button1.TabIndex = 12
@@ -87,6 +87,7 @@ Partial Class FrmAgregarNuevoAuto
         '
         'groupBox1
         '
+        Me.groupBox1.Controls.Add(Me.listClientes)
         Me.groupBox1.Controls.Add(Me.cmbTipoCombustible)
         Me.groupBox1.Controls.Add(Me.txtCorrea)
         Me.groupBox1.Controls.Add(Me.label13)
@@ -105,7 +106,6 @@ Partial Class FrmAgregarNuevoAuto
         Me.groupBox1.Controls.Add(Me.label6)
         Me.groupBox1.Controls.Add(Me.label7)
         Me.groupBox1.Controls.Add(Me.label8)
-        Me.groupBox1.Controls.Add(Me.cmbCliente)
         Me.groupBox1.Controls.Add(Me.txtMarca)
         Me.groupBox1.Controls.Add(Me.txtPatente)
         Me.groupBox1.Controls.Add(Me.txtAnio)
@@ -117,7 +117,7 @@ Partial Class FrmAgregarNuevoAuto
         Me.groupBox1.Controls.Add(Me.label3)
         Me.groupBox1.Location = New System.Drawing.Point(36, 27)
         Me.groupBox1.Name = "groupBox1"
-        Me.groupBox1.Size = New System.Drawing.Size(591, 328)
+        Me.groupBox1.Size = New System.Drawing.Size(591, 498)
         Me.groupBox1.TabIndex = 11
         Me.groupBox1.TabStop = False
         Me.groupBox1.Text = "Datos Del Nuevo Auto"
@@ -128,14 +128,14 @@ Partial Class FrmAgregarNuevoAuto
         Me.cmbTipoCombustible.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbTipoCombustible.FormattingEnabled = True
         Me.cmbTipoCombustible.Items.AddRange(New Object() {"Nafta", "Diesel", "GNC"})
-        Me.cmbTipoCombustible.Location = New System.Drawing.Point(422, 259)
+        Me.cmbTipoCombustible.Location = New System.Drawing.Point(420, 340)
         Me.cmbTipoCombustible.Name = "cmbTipoCombustible"
         Me.cmbTipoCombustible.Size = New System.Drawing.Size(121, 21)
         Me.cmbTipoCombustible.TabIndex = 29
         '
         'txtCorrea
         '
-        Me.txtCorrea.Location = New System.Drawing.Point(135, 262)
+        Me.txtCorrea.Location = New System.Drawing.Point(138, 419)
         Me.txtCorrea.Name = "txtCorrea"
         Me.txtCorrea.Size = New System.Drawing.Size(118, 20)
         Me.txtCorrea.TabIndex = 28
@@ -143,7 +143,7 @@ Partial Class FrmAgregarNuevoAuto
         'label13
         '
         Me.label13.AutoSize = True
-        Me.label13.Location = New System.Drawing.Point(29, 262)
+        Me.label13.Location = New System.Drawing.Point(32, 419)
         Me.label13.Name = "label13"
         Me.label13.Size = New System.Drawing.Size(96, 13)
         Me.label13.TabIndex = 26
@@ -152,7 +152,7 @@ Partial Class FrmAgregarNuevoAuto
         'label14
         '
         Me.label14.AutoSize = True
-        Me.label14.Location = New System.Drawing.Point(318, 262)
+        Me.label14.Location = New System.Drawing.Point(316, 343)
         Me.label14.Name = "label14"
         Me.label14.Size = New System.Drawing.Size(88, 13)
         Me.label14.TabIndex = 25
@@ -160,7 +160,7 @@ Partial Class FrmAgregarNuevoAuto
         '
         'txtKilometraje
         '
-        Me.txtKilometraje.Location = New System.Drawing.Point(422, 217)
+        Me.txtKilometraje.Location = New System.Drawing.Point(420, 298)
         Me.txtKilometraje.Name = "txtKilometraje"
         Me.txtKilometraje.Size = New System.Drawing.Size(118, 20)
         Me.txtKilometraje.TabIndex = 24
@@ -168,7 +168,7 @@ Partial Class FrmAgregarNuevoAuto
         'label11
         '
         Me.label11.AutoSize = True
-        Me.label11.Location = New System.Drawing.Point(318, 224)
+        Me.label11.Location = New System.Drawing.Point(316, 305)
         Me.label11.Name = "label11"
         Me.label11.Size = New System.Drawing.Size(58, 13)
         Me.label11.TabIndex = 22
@@ -176,7 +176,7 @@ Partial Class FrmAgregarNuevoAuto
         '
         'txtAceiteMotor
         '
-        Me.txtAceiteMotor.Location = New System.Drawing.Point(422, 180)
+        Me.txtAceiteMotor.Location = New System.Drawing.Point(420, 261)
         Me.txtAceiteMotor.Name = "txtAceiteMotor"
         Me.txtAceiteMotor.Size = New System.Drawing.Size(118, 20)
         Me.txtAceiteMotor.TabIndex = 23
@@ -184,7 +184,7 @@ Partial Class FrmAgregarNuevoAuto
         'label12
         '
         Me.label12.AutoSize = True
-        Me.label12.Location = New System.Drawing.Point(318, 183)
+        Me.label12.Location = New System.Drawing.Point(316, 264)
         Me.label12.Name = "label12"
         Me.label12.Size = New System.Drawing.Size(67, 13)
         Me.label12.TabIndex = 21
@@ -192,7 +192,7 @@ Partial Class FrmAgregarNuevoAuto
         '
         'txtFiltroHabitaculo
         '
-        Me.txtFiltroHabitaculo.Location = New System.Drawing.Point(422, 139)
+        Me.txtFiltroHabitaculo.Location = New System.Drawing.Point(420, 220)
         Me.txtFiltroHabitaculo.Name = "txtFiltroHabitaculo"
         Me.txtFiltroHabitaculo.Size = New System.Drawing.Size(118, 20)
         Me.txtFiltroHabitaculo.TabIndex = 20
@@ -200,7 +200,7 @@ Partial Class FrmAgregarNuevoAuto
         'label9
         '
         Me.label9.AutoSize = True
-        Me.label9.Location = New System.Drawing.Point(318, 146)
+        Me.label9.Location = New System.Drawing.Point(316, 227)
         Me.label9.Name = "label9"
         Me.label9.Size = New System.Drawing.Size(83, 13)
         Me.label9.TabIndex = 18
@@ -208,14 +208,14 @@ Partial Class FrmAgregarNuevoAuto
         '
         'txtFiltroCombustible
         '
-        Me.txtFiltroCombustible.Location = New System.Drawing.Point(422, 63)
+        Me.txtFiltroCombustible.Location = New System.Drawing.Point(420, 144)
         Me.txtFiltroCombustible.Name = "txtFiltroCombustible"
         Me.txtFiltroCombustible.Size = New System.Drawing.Size(118, 20)
         Me.txtFiltroCombustible.TabIndex = 16
         '
         'txtFiltroAire
         '
-        Me.txtFiltroAire.Location = New System.Drawing.Point(422, 102)
+        Me.txtFiltroAire.Location = New System.Drawing.Point(420, 183)
         Me.txtFiltroAire.Name = "txtFiltroAire"
         Me.txtFiltroAire.Size = New System.Drawing.Size(118, 20)
         Me.txtFiltroAire.TabIndex = 19
@@ -223,7 +223,7 @@ Partial Class FrmAgregarNuevoAuto
         'label10
         '
         Me.label10.AutoSize = True
-        Me.label10.Location = New System.Drawing.Point(318, 105)
+        Me.label10.Location = New System.Drawing.Point(316, 186)
         Me.label10.Name = "label10"
         Me.label10.Size = New System.Drawing.Size(50, 13)
         Me.label10.TabIndex = 17
@@ -231,14 +231,14 @@ Partial Class FrmAgregarNuevoAuto
         '
         'txtFiltroAceite
         '
-        Me.txtFiltroAceite.Location = New System.Drawing.Point(422, 24)
+        Me.txtFiltroAceite.Location = New System.Drawing.Point(420, 105)
         Me.txtFiltroAceite.Name = "txtFiltroAceite"
         Me.txtFiltroAceite.Size = New System.Drawing.Size(118, 20)
         Me.txtFiltroAceite.TabIndex = 15
         '
         'txtColor
         '
-        Me.txtColor.Location = New System.Drawing.Point(135, 220)
+        Me.txtColor.Location = New System.Drawing.Point(138, 377)
         Me.txtColor.Name = "txtColor"
         Me.txtColor.Size = New System.Drawing.Size(118, 20)
         Me.txtColor.TabIndex = 14
@@ -246,7 +246,7 @@ Partial Class FrmAgregarNuevoAuto
         'label6
         '
         Me.label6.AutoSize = True
-        Me.label6.Location = New System.Drawing.Point(31, 223)
+        Me.label6.Location = New System.Drawing.Point(34, 380)
         Me.label6.Name = "label6"
         Me.label6.Size = New System.Drawing.Size(31, 13)
         Me.label6.TabIndex = 13
@@ -255,7 +255,7 @@ Partial Class FrmAgregarNuevoAuto
         'label7
         '
         Me.label7.AutoSize = True
-        Me.label7.Location = New System.Drawing.Point(318, 67)
+        Me.label7.Location = New System.Drawing.Point(316, 148)
         Me.label7.Name = "label7"
         Me.label7.Size = New System.Drawing.Size(89, 13)
         Me.label7.TabIndex = 12
@@ -264,21 +264,11 @@ Partial Class FrmAgregarNuevoAuto
         'label8
         '
         Me.label8.AutoSize = True
-        Me.label8.Location = New System.Drawing.Point(318, 32)
+        Me.label8.Location = New System.Drawing.Point(316, 113)
         Me.label8.Name = "label8"
         Me.label8.Size = New System.Drawing.Size(62, 13)
         Me.label8.TabIndex = 11
         Me.label8.Text = "Filtro Aceite"
-        '
-        'cmbCliente
-        '
-        Me.cmbCliente.DataSource = Me.ClientesBindingSource
-        Me.cmbCliente.DisplayMember = "apellido"
-        Me.cmbCliente.FormattingEnabled = True
-        Me.cmbCliente.Location = New System.Drawing.Point(135, 23)
-        Me.cmbCliente.Name = "cmbCliente"
-        Me.cmbCliente.Size = New System.Drawing.Size(121, 21)
-        Me.cmbCliente.TabIndex = 10
         '
         'ClientesBindingSource
         '
@@ -292,28 +282,28 @@ Partial Class FrmAgregarNuevoAuto
         '
         'txtMarca
         '
-        Me.txtMarca.Location = New System.Drawing.Point(135, 60)
+        Me.txtMarca.Location = New System.Drawing.Point(138, 217)
         Me.txtMarca.Name = "txtMarca"
         Me.txtMarca.Size = New System.Drawing.Size(118, 20)
         Me.txtMarca.TabIndex = 9
         '
         'txtPatente
         '
-        Me.txtPatente.Location = New System.Drawing.Point(135, 180)
+        Me.txtPatente.Location = New System.Drawing.Point(138, 337)
         Me.txtPatente.Name = "txtPatente"
         Me.txtPatente.Size = New System.Drawing.Size(118, 20)
         Me.txtPatente.TabIndex = 8
         '
         'txtAnio
         '
-        Me.txtAnio.Location = New System.Drawing.Point(135, 139)
+        Me.txtAnio.Location = New System.Drawing.Point(138, 296)
         Me.txtAnio.Name = "txtAnio"
         Me.txtAnio.Size = New System.Drawing.Size(118, 20)
         Me.txtAnio.TabIndex = 7
         '
         'txtModelo
         '
-        Me.txtModelo.Location = New System.Drawing.Point(135, 99)
+        Me.txtModelo.Location = New System.Drawing.Point(138, 256)
         Me.txtModelo.Name = "txtModelo"
         Me.txtModelo.Size = New System.Drawing.Size(118, 20)
         Me.txtModelo.TabIndex = 6
@@ -321,7 +311,7 @@ Partial Class FrmAgregarNuevoAuto
         'label2
         '
         Me.label2.AutoSize = True
-        Me.label2.Location = New System.Drawing.Point(31, 63)
+        Me.label2.Location = New System.Drawing.Point(34, 220)
         Me.label2.Name = "label2"
         Me.label2.Size = New System.Drawing.Size(37, 13)
         Me.label2.TabIndex = 1
@@ -330,7 +320,7 @@ Partial Class FrmAgregarNuevoAuto
         'label5
         '
         Me.label5.AutoSize = True
-        Me.label5.Location = New System.Drawing.Point(31, 102)
+        Me.label5.Location = New System.Drawing.Point(34, 259)
         Me.label5.Name = "label5"
         Me.label5.Size = New System.Drawing.Size(42, 13)
         Me.label5.TabIndex = 4
@@ -348,7 +338,7 @@ Partial Class FrmAgregarNuevoAuto
         'label4
         '
         Me.label4.AutoSize = True
-        Me.label4.Location = New System.Drawing.Point(29, 183)
+        Me.label4.Location = New System.Drawing.Point(32, 340)
         Me.label4.Name = "label4"
         Me.label4.Size = New System.Drawing.Size(44, 13)
         Me.label4.TabIndex = 3
@@ -357,7 +347,7 @@ Partial Class FrmAgregarNuevoAuto
         'label3
         '
         Me.label3.AutoSize = True
-        Me.label3.Location = New System.Drawing.Point(31, 142)
+        Me.label3.Location = New System.Drawing.Point(34, 299)
         Me.label3.Name = "label3"
         Me.label3.Size = New System.Drawing.Size(26, 13)
         Me.label3.TabIndex = 2
@@ -376,11 +366,22 @@ Partial Class FrmAgregarNuevoAuto
         Me.AutosBindingSource.DataMember = "autos"
         Me.AutosBindingSource.DataSource = Me.BecharaDataSet
         '
+        'listClientes
+        '
+        Me.listClientes.DataSource = Me.ClientesBindingSource
+        Me.listClientes.DisplayMember = "apellido"
+        Me.listClientes.FormattingEnabled = True
+        Me.listClientes.Location = New System.Drawing.Point(135, 32)
+        Me.listClientes.Name = "listClientes"
+        Me.listClientes.Size = New System.Drawing.Size(120, 160)
+        Me.listClientes.TabIndex = 30
+        Me.listClientes.ValueMember = "idCliente"
+        '
         'FrmAgregarNuevoAuto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(662, 435)
+        Me.ClientSize = New System.Drawing.Size(662, 608)
         Me.Controls.Add(Me.button2)
         Me.Controls.Add(Me.button1)
         Me.Controls.Add(Me.groupBox1)
@@ -413,7 +414,6 @@ Partial Class FrmAgregarNuevoAuto
     Private WithEvents label1 As Label
     Private WithEvents label4 As Label
     Private WithEvents label3 As Label
-    Public WithEvents cmbCliente As ComboBox
     Public WithEvents txtMarca As TextBox
     Public WithEvents txtPatente As TextBox
     Public WithEvents txtAnio As TextBox
@@ -432,4 +432,5 @@ Partial Class FrmAgregarNuevoAuto
     Friend WithEvents AutosTableAdapter As becharaDataSetTableAdapters.autosTableAdapter
     Friend WithEvents AutosBindingSource As BindingSource
     Friend WithEvents cmbTipoCombustible As ComboBox
+    Friend WithEvents listClientes As ListBox
 End Class

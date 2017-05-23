@@ -28,7 +28,7 @@
 
     End Sub
 
-    Private Sub cmbCliente_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbCliente.SelectedIndexChanged
+    Private Sub cmbCliente_SelectedIndexChanged(sender As Object, e As EventArgs)
         Try
             Dim cliente As DataRowView = ClientesBindingSource.Current
             AutosBindingSource.Filter = "clientes_idcliente = " & cliente("nombre")

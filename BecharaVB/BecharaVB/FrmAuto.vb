@@ -15,11 +15,12 @@
     Private Sub button1_Click(sender As Object, e As EventArgs) Handles button1.Click
         If (DialogResult.OK = FrmAgregarNuevoAuto.ShowDialog()) Then
             Dim nuevoAuto As DataRowView
-            Dim cliente As DataRowView = ClientesBindingSource.AddNew()
+            'Dim cliente As DataRowView = ClientesBindingSource.AddNew()
             'AGREGA AUTO
             nuevoAuto = AutosBindingSource.AddNew()
-            nuevoAuto("clientes_idCliente") = FrmAgregarNuevoAuto.cmbCliente.SelectedValue
+            nuevoAuto("clientes_idCliente") = FrmAgregarNuevoAuto.listClientes.SelectedValue
             nuevoAuto("marca") = FrmAgregarNuevoAuto.txtMarca.Text
+            nuevoAuto("patente") = FrmAgregarNuevoAuto.txtPatente.Text
             nuevoAuto("modelo") = FrmAgregarNuevoAuto.txtModelo.Text
             nuevoAuto("anio") = FrmAgregarNuevoAuto.txtAnio.Text
             nuevoAuto("color") = FrmAgregarNuevoAuto.txtColor.Text
@@ -57,13 +58,13 @@
             FrmModificarAuto.txtKilometraje.Text = auto("kilometraje")
             FrmModificarAuto.txtCorrea.Text = auto("distribucion")
             FrmModificarAuto.txtTipoCombustible.Text = auto("tipoCombustible")
-
+            FrmModificarAuto.txtPatente.Text = auto("patente")
 
 
             If (DialogResult.OK = FrmModificarAuto.ShowDialog()) Then
 
 
-
+                auto("patente") = FrmModificarAuto.txtPatente.Text
                 auto("marca") = FrmModificarAuto.txtMarca.Text
                 auto("modelo") = FrmModificarAuto.txtModelo.Text
                 auto("anio") = FrmModificarAuto.txtAnio.Text
