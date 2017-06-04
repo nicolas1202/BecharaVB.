@@ -47,7 +47,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.Install" />
@@ -113,6 +113,12 @@
       <DependentUpon>FrmModificarCliente.vb</DependentUpon>
     </Compile>
     <Compile Include="FrmModificarCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModificarTipoTrabajo.Designer.vb">
+      <DependentUpon>FrmModificarTipoTrabajo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModificarTipoTrabajo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmNuevaOrdenDeTrabajo.Designer.vb">
@@ -183,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmModificarCliente.resx">
       <DependentUpon>FrmModificarCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModificarTipoTrabajo.resx">
+      <DependentUpon>FrmModificarTipoTrabajo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmNuevaOrdenDeTrabajo.resx">
       <DependentUpon>FrmNuevaOrdenDeTrabajo.vb</DependentUpon>

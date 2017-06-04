@@ -22,6 +22,7 @@ Partial Class FrmTipoDeTrabajo
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.comboBox2 = New System.Windows.Forms.ComboBox()
         Me.label3 = New System.Windows.Forms.Label()
         Me.label4 = New System.Windows.Forms.Label()
@@ -31,7 +32,13 @@ Partial Class FrmTipoDeTrabajo
         Me.button1 = New System.Windows.Forms.Button()
         Me.groupBox1 = New System.Windows.Forms.GroupBox()
         Me.listBox1 = New System.Windows.Forms.ListBox()
+        Me.TipotrabajoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BecharaDataSet = New BecharaVB.becharaDataSet()
+        Me.TipotrabajoTableAdapter = New BecharaVB.becharaDataSetTableAdapters.tipotrabajoTableAdapter()
+        Me.TableAdapterManager = New BecharaVB.becharaDataSetTableAdapters.TableAdapterManager()
         Me.groupBox1.SuspendLayout()
+        CType(Me.TipotrabajoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BecharaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'comboBox2
@@ -111,11 +118,42 @@ Partial Class FrmTipoDeTrabajo
         '
         'listBox1
         '
+        Me.listBox1.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.TipotrabajoBindingSource, "nombre", True))
+        Me.listBox1.DataSource = Me.TipotrabajoBindingSource
+        Me.listBox1.DisplayMember = "nombre"
         Me.listBox1.FormattingEnabled = True
-        Me.listBox1.Location = New System.Drawing.Point(30, 19)
+        Me.listBox1.Location = New System.Drawing.Point(24, 19)
         Me.listBox1.Name = "listBox1"
         Me.listBox1.Size = New System.Drawing.Size(522, 225)
         Me.listBox1.TabIndex = 0
+        Me.listBox1.ValueMember = "idTipoTrabajo"
+        '
+        'TipotrabajoBindingSource
+        '
+        Me.TipotrabajoBindingSource.DataMember = "tipotrabajo"
+        Me.TipotrabajoBindingSource.DataSource = Me.BecharaDataSet
+        '
+        'BecharaDataSet
+        '
+        Me.BecharaDataSet.DataSetName = "becharaDataSet"
+        Me.BecharaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'TipotrabajoTableAdapter
+        '
+        Me.TipotrabajoTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.autosTableAdapter = Nothing
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.clientesTableAdapter = Nothing
+        Me.TableAdapterManager.ordentrabajo_has_tipotrabajoTableAdapter = Nothing
+        Me.TableAdapterManager.ordentrabajoTableAdapter = Nothing
+        Me.TableAdapterManager.presupuesto_has_tipotrabajoTableAdapter = Nothing
+        Me.TableAdapterManager.presupuestoTableAdapter = Nothing
+        Me.TableAdapterManager.tipotrabajoTableAdapter = Me.TipotrabajoTableAdapter
+        Me.TableAdapterManager.turnosTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = BecharaVB.becharaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'FrmTipoDeTrabajo
         '
@@ -134,6 +172,8 @@ Partial Class FrmTipoDeTrabajo
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmTipoDeTrabajo"
         Me.groupBox1.ResumeLayout(False)
+        CType(Me.TipotrabajoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BecharaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -148,4 +188,8 @@ Partial Class FrmTipoDeTrabajo
     Private WithEvents button1 As Button
     Private WithEvents groupBox1 As GroupBox
     Private WithEvents listBox1 As ListBox
+    Friend WithEvents BecharaDataSet As becharaDataSet
+    Friend WithEvents TipotrabajoBindingSource As BindingSource
+    Friend WithEvents TipotrabajoTableAdapter As becharaDataSetTableAdapters.tipotrabajoTableAdapter
+    Friend WithEvents TableAdapterManager As becharaDataSetTableAdapters.TableAdapterManager
 End Class

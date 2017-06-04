@@ -20,4 +20,8 @@
     Private Sub button2_Click(sender As Object, e As EventArgs) Handles button2.Click
         Close()
     End Sub
+
+    Private Sub FrmModificarCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class
