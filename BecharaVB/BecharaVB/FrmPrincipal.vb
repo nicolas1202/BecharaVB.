@@ -35,16 +35,8 @@
             Dim clienteActual As DataRowView = ClientesBindingSource.Current
             Dim autoActual As DataRowView = AutosBindingSource.Current
             Dim result As Integer = MessageBox.Show("¿Esta seguro de eliminar al cliente " + clienteActual("nombre") + " " + clienteActual("apellido") + " ?. Se eliminaràn todos sus autos", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Error)
-            Dim idCliente As Integer
-            Dim idAuto As Integer
             If result = DialogResult.Yes Then
 
-                idCliente = clienteActual("idCliente")
-                idAuto = autoActual("clientes_idCliente")
-
-                While idCliente = idAuto
-                    autoActual.Delete()
-                End While
 
                 clienteActual.Delete()
                 'ClientesTableAdapter.Delete(clienteActual("idCliente"), clienteActual("nombre"), clienteActual("apellido"), clienteActual("direccion"), clienteActual("telefono"), clienteActual("fechaNacimiento"), clienteActual("dni"))

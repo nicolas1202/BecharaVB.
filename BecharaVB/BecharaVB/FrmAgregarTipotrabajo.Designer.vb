@@ -24,8 +24,8 @@ Partial Class FrmAgregarTipotrabajo
     Private Sub InitializeComponent()
         Me.button2 = New System.Windows.Forms.Button()
         Me.button1 = New System.Windows.Forms.Button()
-        Me.textBox1 = New System.Windows.Forms.TextBox()
         Me.label1 = New System.Windows.Forms.Label()
+        Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'button2
@@ -48,13 +48,6 @@ Partial Class FrmAgregarTipotrabajo
         Me.button1.Text = "Aceptar"
         Me.button1.UseVisualStyleBackColor = False
         '
-        'textBox1
-        '
-        Me.textBox1.Location = New System.Drawing.Point(117, 30)
-        Me.textBox1.Name = "textBox1"
-        Me.textBox1.Size = New System.Drawing.Size(144, 20)
-        Me.textBox1.TabIndex = 14
-        '
         'label1
         '
         Me.label1.AutoSize = True
@@ -64,14 +57,21 @@ Partial Class FrmAgregarTipotrabajo
         Me.label1.TabIndex = 13
         Me.label1.Text = "Nombre trabajo"
         '
+        'txtNombre
+        '
+        Me.txtNombre.Location = New System.Drawing.Point(123, 30)
+        Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.Size = New System.Drawing.Size(140, 20)
+        Me.txtNombre.TabIndex = 17
+        '
         'FrmAgregarTipotrabajo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(284, 134)
+        Me.Controls.Add(Me.txtNombre)
         Me.Controls.Add(Me.button2)
         Me.Controls.Add(Me.button1)
-        Me.Controls.Add(Me.textBox1)
         Me.Controls.Add(Me.label1)
         Me.Name = "FrmAgregarTipotrabajo"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -83,6 +83,6 @@ Partial Class FrmAgregarTipotrabajo
 
     Private WithEvents button2 As Button
     Private WithEvents button1 As Button
-    Private WithEvents textBox1 As TextBox
     Private WithEvents label1 As Label
+    Friend WithEvents txtNombre As TextBox
 End Class

@@ -72,4 +72,8 @@
             e.Handled = True
         End If
     End Sub
+
+    Private Sub txtNombre_TextChanged(sender As Object, e As EventArgs) Handles txtNombre.TextChanged
+
+    End Sub
 End Class
