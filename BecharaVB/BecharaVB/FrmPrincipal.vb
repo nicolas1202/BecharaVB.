@@ -47,7 +47,7 @@
                 End While
 
                 clienteActual.Delete()
-                ' ClientesTableAdapter.Delete(clienteActual("idCliente"), clienteActual("nombre"), clienteActual("apellido"), clienteActual("direccion"), clienteActual("telefono"), clienteActual("fechaNacimiento"), clienteActual("dni"))
+                'ClientesTableAdapter.Delete(clienteActual("idCliente"), clienteActual("nombre"), clienteActual("apellido"), clienteActual("direccion"), clienteActual("telefono"), clienteActual("fechaNacimiento"), clienteActual("dni"))
                 ClientesTableAdapter.Update(BecharaDataSet.clientes)
                 ClientesTableAdapter.Fill(BecharaDataSet.clientes)
                 AutosTableAdapter.Update(BecharaDataSet.autos)
